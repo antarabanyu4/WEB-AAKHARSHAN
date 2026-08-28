@@ -1,3 +1,8 @@
+/* =========================================================
+   AAKARSHAN XI RPL 1 — PROFESSIONAL REDESIGN
+   Data/content is preserved; this stylesheet focuses on UI.
+   ========================================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
 
 :root {
@@ -56,6 +61,10 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero {
   position: relative;
@@ -142,6 +151,10 @@ a {
   font-size: clamp(0.92rem, 2vw, 1.08rem);
   color: rgba(255,255,255,0.82);
 }
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 
 .navbar {
   position: sticky;
@@ -233,6 +246,10 @@ a {
   filter: brightness(1.12);
 }
 
+/* =========================================================
+   MAIN / BOX
+   ========================================================= */
+
 main {
   width: min(1160px, calc(100% - 32px));
   margin: 30px auto 46px;
@@ -255,6 +272,10 @@ main {
   font: 800 clamp(1.35rem, 3vw, 2rem)/1.25 Poppins, Arial;
   letter-spacing: -0.02em;
 }
+
+/* =========================================================
+   HOME
+   ========================================================= */
 
 .home-box {
   min-height: 235px;
@@ -320,6 +341,10 @@ main {
   filter: blur(4px);
 }
 
+/* =========================================================
+   SECTION LABELS
+   ========================================================= */
+
 .section-note,
 .section-footnote {
   display: block;
@@ -369,6 +394,10 @@ main {
   font-size: 0.82rem;
   font-weight: 500;
 }
+
+/* =========================================================
+   CARDS / MEMBERS
+   ========================================================= */
 
 .card-container {
   display: flex;
@@ -492,6 +521,10 @@ main {
   font-size: 1.08rem;
 }
 
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
 .search-box {
   position: relative;
   max-width: 620px;
@@ -532,6 +565,10 @@ main {
   background: #fff;
   box-shadow: 0 0 0 4px rgba(37,99,235,0.10);
 }
+
+/* =========================================================
+   OTHER PAGES — schedule / piket / structure
+   ========================================================= */
 
 .schedule-grid,
 .piket-grid,
@@ -636,6 +673,9 @@ main {
   font-weight: 800;
 }
 
+/* =========================================================
+   BUTTONS / STATS
+   ========================================================= */
 
 .cta-group {
   display: flex;
@@ -688,6 +728,9 @@ main {
   opacity: 0.8;
 }
 
+/* =========================================================
+   FOOTER / ANIMATION
+   ========================================================= */
 
 footer {
   padding: 28px 16px 34px;
@@ -721,6 +764,10 @@ body.page-leaving {
   transform: translateY(3px);
 }
 
+/* =========================================================
+   TABLET
+   ========================================================= */
+
 @media (max-width: 900px) {
   .piket-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -741,6 +788,10 @@ body.page-leaving {
   }
 }
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 680px) {
   .hero {
     padding: 36px 15px 28px;
@@ -754,10 +805,6 @@ body.page-leaving {
 
   .hero-title {
     font-size: clamp(2.2rem, 15vw, 3.4rem);
-  }
-
-  .hero-headline {
-    margin-bottom: 4px;
   }
 
   main {
@@ -777,40 +824,19 @@ body.page-leaving {
   .navbar {
     top: 8px;
     width: calc(100% - 14px);
-    padding: 6px;
     border-radius: 18px;
-    overflow: hidden;
   }
 
-  /* Mobile: satu baris horizontal, tidak pecah menjadi 2 baris. */
   .navbar ul {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 2px;
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-x: contain;
-  }
-
-  .navbar ul::-webkit-scrollbar {
-    display: none;
-  }
-
-  .navbar li {
-    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .navbar a {
-    display: block;
-    padding: 9px 12px;
+    padding: 9px 6px;
     border-radius: 13px;
     text-align: center;
     font-size: 0.74rem;
-    white-space: nowrap;
   }
 
   .navbar ul::after {
@@ -870,6 +896,10 @@ body.page-leaving {
   }
 }
 
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -880,5 +910,380 @@ body.page-leaving {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+/* =========================================================
+   BIRTHDAY — TAMBAHAN
+   Tidak mengubah styling utama website.
+   ========================================================= */
+
+.birthday-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 24px;
+  padding: 20px 22px;
+  border: 1px solid #f3d28b;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 8% 50%, rgba(251, 191, 36, 0.15), transparent 13rem),
+    linear-gradient(135deg, #fffdf6, #fff8e7);
+  box-shadow: 0 14px 38px rgba(180, 130, 30, 0.10);
+  animation: birthdayPop 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.birthday-box[hidden] {
+  display: none !important;
+}
+
+.birthday-icon {
+  flex: 0 0 58px;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: #fff;
+  font-size: 1.9rem;
+  box-shadow: 0 7px 20px rgba(180, 130, 30, 0.12);
+}
+
+.birthday-kicker {
+  display: block;
+  margin-bottom: 3px;
+  color: #b7791f;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.birthday-content h2 {
+  margin: 0 0 3px;
+  font: 800 clamp(1.15rem, 3vw, 1.55rem)/1.3 Poppins, Arial, sans-serif;
+  color: #6b4300;
+}
+
+.birthday-content p {
+  color: #826a3a;
+  font-size: 0.84rem;
+}
+
+.birthday-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(380px, calc(100% - 30px));
+  padding: 13px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 18px;
+  background: rgba(20, 27, 42, 0.88);
+  color: #fff;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  animation: toastIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.birthday-toast-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 1.35rem;
+}
+
+.birthday-toast div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.birthday-toast strong {
+  font-size: 0.82rem;
+}
+
+.birthday-toast span:not(.birthday-toast-icon) {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.76rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.birthday-toast button {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.birthday-toast.hide {
+  animation: toastOut 0.25s ease both;
+}
+
+/* Countdown setiap siswa */
+.birthday-countdown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 8px auto 2px;
+  padding: 6px 10px;
+  border: 1px solid rgba(234, 179, 8, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 248, 220, 0.9);
+  color: #8a5a00;
+  font-size: 0.69rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.birthday-countdown.birthday-today {
+  border-color: rgba(236, 72, 153, 0.3);
+  background: linear-gradient(135deg, #fff0f5, #fff8df);
+  color: #be185d;
+  animation: birthdayPulse 1.6s ease-in-out infinite;
+}
+
+.card.birthday-today-card {
+  border-color: rgba(236, 72, 153, 0.45) !important;
+  box-shadow: 0 14px 36px rgba(236, 72, 153, 0.16) !important;
+}
+
+/* Popup card */
+.birthday-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.birthday-popup[hidden] {
+  display: none !important;
+}
+
+.birthday-popup.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.birthday-popup-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 12, 24, 0.62);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.birthday-popup-card {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 390px);
+  padding: 28px 24px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 15% 5%, rgba(251, 191, 36, 0.18), transparent 9rem),
+    radial-gradient(circle at 90% 90%, rgba(236, 72, 153, 0.12), transparent 11rem),
+    rgba(255, 255, 255, 0.94);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  text-align: center;
+  transform: translateY(18px) scale(0.94);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+}
+
+.birthday-popup.show .birthday-popup-card {
+  transform: translateY(0) scale(1);
+}
+
+.birthday-popup-close {
+  position: absolute;
+  top: 12px;
+  right: 13px;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.08);
+  color: #475467;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.birthday-popup-close:hover {
+  transform: rotate(90deg);
+  background: rgba(15, 23, 42, 0.13);
+}
+
+.birthday-popup-confetti {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  letter-spacing: 0.25rem;
+}
+
+.birthday-popup-photo-wrap {
+  width: 122px;
+  height: 122px;
+  margin: 0 auto 15px;
+  padding: 4px;
+  border-radius: 34px;
+  background: linear-gradient(135deg, #f59e0b, #ec4899);
+  box-shadow: 0 14px 30px rgba(236, 72, 153, 0.18);
+}
+
+.birthday-popup-photo-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  background: #f1f5f9;
+}
+
+.birthday-popup-label {
+  display: inline-block;
+  margin-bottom: 6px;
+  color: #db2777;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.birthday-popup-card h2 {
+  margin: 0;
+  color: #1d2939;
+  font: 800 clamp(1.25rem, 5vw, 1.7rem)/1.25 Poppins, Arial, sans-serif;
+}
+
+.birthday-popup-card > p {
+  margin: 7px 0 0;
+  color: #667085;
+  font-size: 0.82rem;
+}
+
+.birthday-popup-card .birthday-popup-message {
+  max-width: 300px;
+  margin: 14px auto 0;
+  color: #475467;
+  line-height: 1.6;
+}
+
+body.birthday-popup-open {
+  overflow: hidden;
+}
+
+@keyframes birthdayPop {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes birthdayPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.035);
+  }
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (max-width: 680px) {
+  .birthday-box {
+    align-items: flex-start;
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .birthday-icon {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    font-size: 1.5rem;
+  }
+
+  .birthday-toast {
+    right: 15px;
+    bottom: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .birthday-popup {
+    padding: 14px;
+  }
+
+  .birthday-popup-card {
+    width: min(94vw, 350px);
+    padding: 24px 18px 21px;
+    border-radius: 25px;
+  }
+
+  .birthday-popup-photo-wrap {
+    width: 105px;
+    height: 105px;
+    border-radius: 29px;
+  }
+
+  .birthday-popup-photo-wrap img {
+    border-radius: 25px;
+  }
+
+  .birthday-countdown {
+    font-size: 0.64rem;
+    padding: 5px 8px;
   }
 }

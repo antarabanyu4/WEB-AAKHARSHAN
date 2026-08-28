@@ -1,477 +1,1555 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Keluarga XI RPL 1</title>
+
+  <title>Portal Resmi & Ruang Kolaborasi — AAKARSHAN XI RPL 1</title>
+
   <link rel="icon" type="image/png" href="images/pplg1.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header class="hero">
-    <img src="images/pplg1.png" alt="Logo Kelas" class="hero-logo">
-    <p class="eyebrow">XI RPL 1 • SMK Negeri 1 Purbalingga</p>
-    <h1 class="hero-title">AAKARSHAN</h1>
-    <p class="hero-headline">Keluarga Besar Ibu Khamsyatun Yudiana, S.Pd.I</p>
 
+
+<body>
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <header class="hero">
+
+    <img
+      src="images/pplg1.png"
+      alt="Logo Kelas"
+      class="hero-logo"
+    >
+
+    <p class="eyebrow">
+      XI RPL 1 • SMK Negeri 1 Purbalingga
+    </p>
+
+    <h1 class="hero-title">
+      AAKARSHAN
+    </h1>
+
+    <p class="hero-headline">
+      Keluarga Besar Ibu Khamsyatun Yudiana, S.Pd.I
+    </p>
+
+
+    <!-- NAVBAR -->
 
     <nav class="navbar" aria-label="Navigasi utama">
+
       <ul>
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="jadwal.html">Jadwal Pelajaran</a></li>
-        <li><a href="piket.html">Jadwal Piket</a></li>
-        <li><a href="struktur.html">Struktur Kelas</a></li>
+
+        <li>
+          <a class="active" href="index.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="jadwal.html">
+            Jadwal Pelajaran
+          </a>
+        </li>
+
+        <li>
+          <a href="piket.html">
+            Jadwal Piket
+          </a>
+        </li>
+
+        <li>
+          <a href="struktur.html">
+            Struktur Kelas
+          </a>
+        </li>
+
       </ul>
+
     </nav>
+
   </header>
 
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
   <main>
-    <section class="box home-box" id="Home">
-      <div class="home-glow" aria-hidden="true"></div>
+
+
+    <!-- ===================================================
+         HOME
+    ==================================================== -->
+
+    <section
+      class="box home-box"
+      id="Home"
+    >
+
+      <div
+        class="home-glow"
+        aria-hidden="true"
+      ></div>
+
       <div class="home-content">
-        <span class="home-kicker">✦ KELAS PALING NYENI</span>
-        <h2>Selamat datang di Kelas XI RPL 1 SMK Negeri 1 Purbalingga</h2>
-        <p>Tahun Ajaran 2026/2027</p>
+
+        <span class="home-kicker">
+          ✦ KELAS PALING NYENI
+        </span>
+
+        <h2>
+          Selamat datang di Kelas XI RPL 1
+          SMK Negeri 1 Purbalingga
+        </h2>
+
+        <p>
+          Tahun Ajaran 2026/2027
+        </p>
+
       </div>
+
     </section>
 
-    <section class="box" id="Member">
-      <span class="section-tag accent-purple">Wali Kelas</span>
-      <div class="wali-heading"><h2>Wali Kelas</h2><span class="wali-caption">Pembimbing Kelas XI RPL 1</span></div>
-      <div class="card-container">
-        <div class="card">
-          <img alt="Wali Kelas" src="images/adit.png" />
-          <h3>Khamsyatun Yudiana, S.Pd.I</h3>
-          <a href="https://instagram.com/restu_afriwh" target="_blank">Instagram</a>
-        </div>
+    <section
+      class="birthday-box"
+      id="BirthdayNotification"
+      aria-live="polite"
+      hidden
+    >
+
+      <div
+        class="birthday-icon"
+        aria-hidden="true"
+      >
+        🎂
       </div>
 
-      <div class="students-heading"><span class="section-tag accent-blue">MEMBERS</span><h2>Daftar Murid</h2></div>
+      <div class="birthday-content">
+
+        <span class="birthday-kicker">
+          HARI INI ADA YANG ULANG TAHUN
+        </span>
+
+        <h2 id="birthdayTitle">
+          Selamat Ulang Tahun!
+        </h2>
+
+        <p id="birthdayMessage"></p>
+
+      </div>
+
+      <div
+        class="birthday-cards"
+        id="birthdayCards"
+      ></div>
+
+    </section>
+
+    <section
+      class="box"
+      id="Member"
+    >
+
+
+      <!-- WALI KELAS -->
+
+      <span class="section-tag accent-purple">
+        Wali Kelas
+      </span>
+
+      <div class="wali-heading">
+
+        <h2>
+          Wali Kelas
+        </h2>
+
+        <span class="wali-caption">
+          Pembimbing Kelas XI RPL 1
+        </span>
+
+      </div>
+
+
+      <div class="card-container">
+
+        <div class="card">
+
+          <img
+            alt="Wali Kelas"
+            src="images/ananda.png"
+          >
+
+          <h3>
+            Khamsyatun Yudiana, S.Pd.I
+          </h3>
+
+          <a
+            href="https://instagram.com/restu_afriwh"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="students-heading">
+
+        <span class="section-tag accent-blue">
+          MEMBERS
+        </span>
+
+        <h2>
+          Daftar Murid
+        </h2>
+
+      </div>
+
       <div class="search-box">
-        <input id="searchInput" onkeyup="searchSiswa()" placeholder="Cari Nama Murid" type="text" />
+
+        <input
+          id="searchInput"
+          onkeyup="searchSiswa()"
+          placeholder="Cari Nama Murid"
+          type="text"
+        >
+
       </div>
+
       <div class="card-container">
+
+
         <div class="card">
-          <img alt="Adyta" src="images/adit.png" />
-          <h3>Adyta Rizqi S</h3>
-          <p>15 Desember 2009</p>
-          <a href="https://instagram.com/dit_zx7" target="_blank">Instagram</a>
+
+          <img
+            alt="Adyta"
+            src="images/adit.png"
+          >
+
+          <h3>
+            Adyta Rizqi S
+          </h3>
+
+          <p>
+            15 Desember 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="15 Desember 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/dit_zx7"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
-        <!-- (Data murid lainnya juga mengikuti format yang sama di atas) -->
+
+
+
+        <!-- DATA MURID LAINNYA -->
+
         <div class="card">
-          <img alt="Afif" src="images/afif.png" />
-          <h3>Afif Nur H</h3>
-          <p>06 Agustus 2009</p>
-          <a href="https://instagram.com/susukocokrasaacokelatt_" target="_blank">Instagram</a>
+
+          <img
+            alt="Afif"
+            src="images/afif.png"
+          >
+
+          <h3>
+            Afif Nur H
+          </h3>
+
+          <p>
+            06 Agustus 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="06 Agustus 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/susukocokrasaacokelatt_"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Alena" src="images/alena.png" />
-          <h3>Alena Baby S</h3>
-          <p>03 November 2010</p>
-          <a href="https://www.instagram.com/alenays__" target="_blank">Instagram</a>
+
+          <img
+            alt="Alena"
+            src="images/alena.png"
+          >
+
+          <h3>
+            Alena Baby S
+          </h3>
+
+          <p>
+            03 November 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="03 November 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://www.instagram.com/alenays__"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Naufal" src="images/ananda.png" />
-          <h3>Ananda Nauval B</h3>
-          <p>15 April 2010</p>
-          <a href="https://www.instagram.com/defghi_qn" target="_blank">Instagram</a>
+
+          <img
+            alt="Naufal"
+            src="images/ananda.png"
+          >
+
+          <h3>
+            Ananda Nauval B
+          </h3>
+
+          <p>
+            15 April 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="15 April 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://www.instagram.com/defghi_qn"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Antara" src="images/antara.png" />
-          <h3>Antara Banyu P</h3>
-          <p>06 Desember 2009</p>
-          <a href="https://instagram.com/cksqeu" target="_blank">Instagram</a>
+
+          <img
+            alt="Antara"
+            src="images/antara.png"
+          >
+
+          <h3>
+            Antara Banyu P
+          </h3>
+
+          <p>
+            06 Desember 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="06 Desember 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/cksqeu"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Bagus" src="images/bagus.png" />
-          <h3>Bagus Arrasyid R</h3>
-          <p>17 Agustus 2010</p>
-          <a href="https://instagram.com/rdva_yx" target="_blank">Instagram</a>
+
+          <img
+            alt="Bagus"
+            src="images/bagus.png"
+          >
+
+          <h3>
+            Bagus Arrasyid R
+          </h3>
+
+          <p>
+            17 Agustus 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="17 Agustus 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/rdva_yx"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Calista" src="images/calista.png" />
-          <h3>Calista Azra R</h3>
-          <p>27 Agustus 2010</p>
-          <a href="https://instagram.com/clszraa" target="_blank">Instagram</a>
+
+          <img
+            alt="Calista"
+            src="images/calista.png"
+          >
+
+          <h3>
+            Calista Azra R
+          </h3>
+
+          <p>
+            27 Agustus 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="27 Agustus 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/clszraa"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Tisya" src="images/tisya.png" />
-          <h3>Cristian Tisya A</h3>
-          <p>06 November 2009</p>
-          <a href="https://instagram.com/cristiantisyaandriani" target="_blank">Instagram</a>
+
+          <img
+            alt="Tisya"
+            src="images/tisya.png"
+          >
+
+          <h3>
+            Cristian Tisya A
+          </h3>
+
+          <p>
+            06 November 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="06 November 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/cristiantisyaandriani"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Bylva" src="images/bylva.png" />
-          <h3>Deandra Bylva K</h3>
-          <p>-</p>
-          <a href="https://instagram.com/0501_dumpp" target="_blank">Instagram</a>
+
+          <img
+            alt="Bylva"
+            src="images/bylva.png"
+          >
+
+          <h3>
+            Deandra Bylva K
+          </h3>
+
+          <p>
+            -
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="-"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/0501_dumpp"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Deka" src="images/deka.png" />
-          <h3>Deka Fajar B.A</h3>
-          <p>29 September 2009</p>
-          <a href="https://instagram.com/fadekaa0" target="_blank">Instagram</a>
+
+          <img
+            alt="Deka"
+            src="images/deka.png"
+          >
+
+          <h3>
+            Deka Fajar B.A
+          </h3>
+
+          <p>
+            29 September 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="29 September 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/fadekaa0"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Desta" src="images/desta.png" />
-          <h3>Desta Nur E</h3>
-          <p>31 Desember 2010</p>
-          <a href="https://instagram.com/des_suka_mu" target="_blank">Instagram</a>
+
+          <img
+            alt="Desta"
+            src="images/desta.png"
+          >
+
+          <h3>
+            Desta Nur E
+          </h3>
+
+          <p>
+            31 Desember 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="31 Desember 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/des_suka_mu"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Difa" src="images/difa.png" />
-          <h3>Difa Milkalia A</h3>
-          <p>-</p>
-          <a href="https://instagram.com/dipaa_milka.docx" target="_blank">Instagram</a>
+
+          <img
+            alt="Difa"
+            src="images/difa.png"
+          >
+
+          <h3>
+            Difa Milkalia A
+          </h3>
+
+          <p>
+            -
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="-"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/dipaa_milka.docx"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Efraim" src="images/efra.png" />
-          <h3>Efraim Aditya</h3>
-          <p>21 Oktober 2009</p>
-          <a href="https://instagram.com/efraaimm7" target="_blank">Instagram</a>
+
+          <img
+            alt="Efraim"
+            src="images/efra.png"
+          >
+
+          <h3>
+            Efraim Aditya
+          </h3>
+
+          <p>
+            21 Oktober 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="21 Oktober 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/efraaimm7"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Elhib" src="images/elhib.png" />
-          <h3>Elhib Maouly Saputri Alk</h3>
-          <p>05 Oktober 2010</p>
-          <a href="https://instagram.com/nighttr3vde" target="_blank">Instagram</a>
+
+          <img
+            alt="Elhib"
+            src="images/elhib.png"
+          >
+
+          <h3>
+            Elhib Maouly Saputri Alk
+          </h3>
+
+          <p>
+            05 Oktober 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="05 Oktober 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/nighttr3vde"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Erniesya" src="images/erni.png" />
-          <h3>Erniesya Kurniasih</h3>
-          <p>13 Januari 2010</p>
-          <a href="https://instagram.com/ernsaaaa" target="_blank">Instagram</a>
+
+          <img
+            alt="Erniesya"
+            src="images/erni.png"
+          >
+
+          <h3>
+            Erniesya Kurniasih
+          </h3>
+
+          <p>
+            13 Januari 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="13 Januari 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/ernsaaaa"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Erwina" src="images/erwina.png" />
-          <h3>Erwina Widya N</h3>
-          <p>29 November 2010</p>
-          <a href="https://instagram.com/ewna_nrw" target="_blank">Instagram</a>
+
+          <img
+            alt="Erwina"
+            src="images/erwina.png"
+          >
+
+          <h3>
+            Erwina Widya N
+          </h3>
+
+          <p>
+            29 November 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="29 November 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/ewna_nrw"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Evan" src="images/evan.png" />
-          <h3>Evan Putra P</h3>
-          <p>3 Maret 2010</p>
-          <a href="https://instagram.com/_evannputra" target="_blank">Instagram</a>
+
+          <img
+            alt="Evan"
+            src="images/evan.png"
+          >
+
+          <h3>
+            Evan Putra P
+          </h3>
+
+          <p>
+            3 Maret 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="3 Maret 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/_evannputra"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Fajar" src="images/fajar.png" />
-          <h3>Fajar Hidayah</h3>
-          <p>11 Desember 2009</p>
-          <a href="https://instagram.com/fajar_hidayah01" target="_blank">Instagram</a>
+
+          <img
+            alt="Fajar"
+            src="images/fajar.png"
+          >
+
+          <h3>
+            Fajar Hidayah
+          </h3>
+
+          <p>
+            11 Desember 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="11 Desember 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/fajar_hidayah01"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Fajri" src="images/fajri.png" />
-          <h3>Fajri Tahsin B</h3>
-          <p>06 Agustus 2009</p>
-          <a href="https://instagram.com/ppaajjrii" target="_blank">Instagram</a>
+
+          <img
+            alt="Fajri"
+            src="images/fajri.png"
+          >
+
+          <h3>
+            Fajri Tahsin B
+          </h3>
+
+          <p>
+            06 Agustus 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="06 Agustus 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/ppaajjrii"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Farah" src="images/farah.png" />
-          <h3>Farah Nuralifa</h3>
-          <p>21 Maret 2010</p>
-          <a href="https://instagram.com/lielyf.css" target="_blank">Instagram</a>
+
+          <img
+            alt="Farah"
+            src="images/farah.png"
+          >
+
+          <h3>
+            Farah Nuralifa
+          </h3>
+
+          <p>
+            21 Maret 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="21 Maret 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/lielyf.css"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Fatih" src="images/fatih.png" />
-          <h3>Fatih Badru Z</h3>
-          <p>24 Maret 2009</p>
-          <a href="https://instagram.com/_fthbzz" target="_blank">Instagram</a>
+
+          <img
+            alt="Fatih"
+            src="images/fatih.png"
+          >
+
+          <h3>
+            Fatih Badru Z
+          </h3>
+
+          <p>
+            24 Maret 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="24 Maret 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/_fthbzz"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Geisha" src="images/geisha.png" />
-          <h3>Geisha Fauziyah</h3>
-          <p>14 April 2010</p>
-          <a href="https://instagram.com/gsfh_1" target="_blank">Instagram</a>
+
+          <img
+            alt="Geisha"
+            src="images/geisha.png"
+          >
+
+          <h3>
+            Geisha Fauziyah
+          </h3>
+
+          <p>
+            14 April 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="14 April 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/gsfh_1"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Hafsa" src="images/hafsa.png" />
-          <h3>Hafsa Lanika M</h3>
-          <p>11 November 2009</p>
-          <a href="https://instagram.com/hfs.lm" target="_blank">Instagram</a>
+
+          <img
+            alt="Hafsa"
+            src="images/hafsa.png"
+          >
+
+          <h3>
+            Hafsa Lanika M
+          </h3>
+
+          <p>
+            11 November 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="11 November 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/hfs.lm"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Heri" src="images/heri.png" />
-          <h3>Heri Setiawan</h3>
-          <p>18 Maret 2010</p>
-          <a href="https://instagram.com/heriistiawannn" target="_blank">Instagram</a>
+
+          <img
+            alt="Heri"
+            src="images/heri.png"
+          >
+
+          <h3>
+            Heri Setiawan
+          </h3>
+
+          <p>
+            18 Maret 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="18 Maret 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/heriistiawannn"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Kevin" src="images/kevin.png" />
-          <h3>Kevin Veda R</h3>
-          <p>6 Juli 2010</p>
-          <a href="https://instagram.com/agk_alamak" target="_blank">Instagram</a>
+
+          <img
+            alt="Kevin"
+            src="images/kevin.png"
+          >
+
+          <h3>
+            Kevin Veda R
+          </h3>
+
+          <p>
+            6 Juli 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="6 Juli 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/agk_alamak"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Kiano" src="images/kiano.png" />
-          <h3>Kiano Mahendra Gusti K</h3>
-          <p>26 Juni 2010</p>
-          <a href="https://instagram.com/kianomhndra_" target="_blank">Instagram</a>
+
+          <img
+            alt="Kiano"
+            src="images/kiano.png"
+          >
+
+          <h3>
+            Kiano Mahendra Gusti K
+          </h3>
+
+          <p>
+            26 Juni 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="26 Juni 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/kianomhndra_"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="Lusy" src="images/lusy.png" />
-          <h3>Lusy Lukita S</h3>
-          <p>22 Januari 2010</p>
-          <a href="https://instagram.com/jallyyysb" target="_blank">Instagram</a>
+
+          <img
+            alt="Lusy"
+            src="images/lusy.png"
+          >
+
+          <h3>
+            Lusy Lukita S
+          </h3>
+
+          <p>
+            22 Januari 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="22 Januari 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/jallyyysb"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="dyna" src="images/dyna.png" />
-          <h3>Medyna Aisya A</h3>
-          <p>14 Desember 2009</p>
-          <a href="https://instagram.com/jdyesya" target="_blank">Instagram</a>
+
+          <img
+            alt="dyna"
+            src="images/dyna.png"
+          >
+
+          <h3>
+            Medyna Aisya A
+          </h3>
+
+          <p>
+            14 Desember 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="14 Desember 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/jdyesya"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="rakha" src="images/rakha.png" />
-          <h3>Rakha Syakir W</h3>
-          <p>6 November 2009</p>
-          <a href="https://instagram.com/rkhaexc_" target="_blank">Instagram</a>
+
+          <img
+            alt="rakha"
+            src="images/rakha.png"
+          >
+
+          <h3>
+            Rakha Syakir W
+          </h3>
+
+          <p>
+            6 November 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="6 November 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/rkhaexc_"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="saumi" src="images/saumi.png" />
-          <h3>Saumi Racika Z</h3>
-          <p>22 Juli 2009</p>
-          <a href="https://instagram.com/cikkk_zzz" target="_blank">Instagram</a>
+
+          <img
+            alt="saumi"
+            src="images/saumi.png"
+          >
+
+          <h3>
+            Saumi Racika Z
+          </h3>
+
+          <p>
+            22 Juli 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="22 Juli 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/cikkk_zzz"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="tatas" src="images/tatas.png" />
-          <h3>Tatas Kesuma J</h3>
-          <p>4 Februari 2010</p>
-          <a href="https://instagram.com/4taaa._" target="_blank">Instagram</a>
+
+          <img
+            alt="tatas"
+            src="images/tatas.png"
+          >
+
+          <h3>
+            Tatas Kesuma J
+          </h3>
+
+          <p>
+            4 Februari 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="4 Februari 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/4taaa._"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="titis" src="images/titis.png" />
-          <h3>Titis Alifia</h3>
-          <p>27 Februari 2010</p>
-          <a href="https://instagram.com/t__twiss" target="_blank">Instagram</a>
+
+          <img
+            alt="titis"
+            src="images/titis.png"
+          >
+
+          <h3>
+            Titis Alifia
+          </h3>
+
+          <p>
+            27 Februari 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="27 Februari 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/t__twiss"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="valen" src="images/valen.png" />
-          <h3>Valen Aulia S</h3>
-          <p>13 Januari 2009</p>
-          <a href="https://instagram.com/_hynpoctonuy$" target="_blank">Instagram</a>
+
+          <img
+            alt="valen"
+            src="images/valen.png"
+          >
+
+          <h3>
+            Valen Aulia S
+          </h3>
+
+          <p>
+            13 Januari 2009
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="13 Januari 2009"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/_hynpoctonuy$"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="yuanita" src="images/yuanita.png" />
-          <h3>Yuanita Kusuma N</h3>
-          <p>23 Agustus 2010</p>
-          <a href="https://instagram.com/ni_taaaaaaa" target="_blank">Instagram</a>
+
+          <img
+            alt="yuanita"
+            src="images/yuanita.png"
+          >
+
+          <h3>
+            Yuanita Kusuma N
+          </h3>
+
+          <p>
+            23 Agustus 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="23 Agustus 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/ni_taaaaaaa"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
+
+
         <div class="card">
-          <img alt="zidan" src="images/zidan.png" />
-          <h3>Zidan Agil N</h3>
-          <p>20 Juli 2010</p>
-          <a href="https://instagram.com/danzz_x999" target="_blank">Instagram</a>
+
+          <img
+            alt="zidan"
+            src="images/zidan.png"
+          >
+
+          <h3>
+            Zidan Agil N
+          </h3>
+
+          <p>
+            20 Juli 2010
+          </p>
+
+          <div
+            class="birthday-countdown"
+            data-birthday="20 Juli 2010"
+          >
+            Memuat countdown...
+          </div>
+
+          <a
+            href="https://instagram.com/danzz_x999"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
         </div>
+
       </div>
+
     </section>
+
+    <div
+      class="birthday-popup"
+      id="BirthdayPopup"
+      hidden
+      aria-hidden="true"
+    >
+
+      <div
+        class="birthday-popup-backdrop"
+        data-birthday-close
+      ></div>
+
+      <div
+        class="birthday-popup-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="birthdayPopupTitle"
+      >
+
+        <button
+          class="birthday-popup-close"
+          type="button"
+          aria-label="Tutup"
+          data-birthday-close
+        >
+          ×
+        </button>
+
+        <div
+          class="birthday-popup-confetti"
+          aria-hidden="true"
+        >
+          🎉 🎂 🎈
+        </div>
+
+        <div class="birthday-popup-photo-wrap">
+
+          <img
+            id="birthdayPopupPhoto"
+            src=""
+            alt="Foto siswa yang ulang tahun"
+          >
+
+        </div>
+
+        <span class="birthday-popup-label">
+          🎂 BIRTHDAY TODAY
+        </span>
+
+        <h2 id="birthdayPopupTitle">
+          Selamat Ulang Tahun!
+        </h2>
+
+        <p id="birthdayPopupDate"></p>
+
+        <p class="birthday-popup-message">
+          Semoga panjang umur, sehat selalu,
+          semakin sukses, dan semua cita-citanya
+          tercapai! ✨
+        </p>
+
+      </div>
+
+    </div>
 
     <script>
+
       function searchSiswa() {
-        const input = document.getElementById("searchInput").value.toLowerCase().trim();
-        document.querySelectorAll("#Member .card-container:last-child .card").forEach(card => {
-          const nama = card.querySelector("h3").innerText.toLowerCase();
-          card.style.display = nama.includes(input) ? "" : "none";
-        });
+
+        const input =
+          document
+            .getElementById("searchInput")
+            .value
+            .toLowerCase()
+            .trim();
+
+        document
+          .querySelectorAll(
+            "#Member .card-container:last-child .card"
+          )
+          .forEach(card => {
+
+            const nama =
+              card
+                .querySelector("h3")
+                .innerText
+                .toLowerCase();
+
+            card.style.display =
+              nama.includes(input)
+                ? ""
+                : "none";
+
+          });
+
       }
+
     </script>
+
+
+
   </main>
 
   <footer>
-    &copy; AAKARSHAN · XI RPL 1 SMK Negeri 1 Purbalingga
+
+    &copy; AAKARSHAN · XI RPL 1
+    SMK Negeri 1 Purbalingga
+
   </footer>
 
- <script>
-  /* =========================================
-     SLIDING NAVBAR
-  ========================================= */
+  <script>
 
-  const navbar =
-    document.querySelector(".navbar");
+    const navbar =
+      document.querySelector(".navbar");
 
-  const navList =
-    document.querySelector(".navbar ul");
+    const navList =
+      document.querySelector(".navbar ul");
 
-  const navLinks =
-    document.querySelectorAll(".navbar a");
+    const navLinks =
+      document.querySelectorAll(".navbar a");
 
 
-  /* =========================================
-     POSISI GLASS PILL
-  ========================================= */
+    function moveIndicator(link) {
 
-  function moveIndicator(link) {
+      if (!link || !navList) {
+        return;
+      }
 
-    if (!link || !navList) {
-      return;
-    }
+      const linkBox =
+        link.getBoundingClientRect();
 
-    const linkBox =
-      link.getBoundingClientRect();
+      const listBox =
+        navList.getBoundingClientRect();
 
-    const listBox =
-      navList.getBoundingClientRect();
+      const left =
+        linkBox.left -
+        listBox.left;
 
-    const left =
-      linkBox.left -
-      listBox.left;
-
-    const width =
-      linkBox.width;
+      const width =
+        linkBox.width;
 
 
-    navList.style.setProperty(
-      "--nav-left",
-      left + "px"
-    );
-
-    navList.style.setProperty(
-      "--nav-width",
-      width + "px"
-    );
-  }
-
-
-  /* =========================================
-     SAAT HALAMAN DIBUKA
-  ========================================= */
-
-  function initializeNavbar() {
-
-    const active =
-      document.querySelector(
-        ".navbar a.active"
+      navList.style.setProperty(
+        "--nav-left",
+        left + "px"
       );
 
-    moveIndicator(active);
-  }
-
-
-  window.addEventListener(
-    "load",
-    initializeNavbar
-  );
-
-
-  /* =========================================
-     KLIK MENU
-  ========================================= */
-
-  navLinks.forEach(
-    function (link) {
-
-      link.addEventListener(
-        "click",
-        function (event) {
-
-          const currentPage =
-            window.location.pathname;
-
-          const target =
-            new URL(
-              this.href,
-              window.location.href
-            );
-
-
-          /* Kalau klik halaman yang
-             sedang dibuka */
-
-          if (
-            target.pathname ===
-            currentPage
-          ) {
-
-            event.preventDefault();
-
-            moveIndicator(this);
-
-            return;
-          }
-
-
-          /* Hentikan navigasi sebentar */
-
-          event.preventDefault();
-
-
-          /* Tandai sedang bergerak */
-
-          navbar.classList.add(
-            "moving"
-          );
-
-
-          /* Hapus active */
-
-          navLinks.forEach(
-            function (item) {
-
-              item.classList.remove(
-                "active"
-              );
-
-            }
-          );
-
-
-          /* Aktifkan menu tujuan */
-
-          this.classList.add(
-            "active"
-          );
-
-
-          /* =================================
-             INI BAGIAN YANG MEMBUAT
-             GLASS BENAR-BENAR BERGESER
-          ================================= */
-
-          moveIndicator(this);
-
-
-          /* Tunggu animasi selesai */
-
-          setTimeout(
-            function () {
-
-              document.body.classList.add(
-                "page-leaving"
-              );
-
-            },
-            300
-          );
-
-
-          /* Pindah halaman */
-
-          setTimeout(
-            function () {
-
-              window.location.href =
-                target.href;
-
-            },
-            450
-          );
-
-        }
+      navList.style.setProperty(
+        "--nav-width",
+        width + "px"
       );
 
     }
-  );
 
 
-  /* =========================================
-     RESPONSIVE
-  ========================================= */
-
-  window.addEventListener(
-    "resize",
-    function () {
+    function initializeNavbar() {
 
       const active =
         document.querySelector(
@@ -479,9 +1557,1249 @@
         );
 
       moveIndicator(active);
+
     }
-  );
-</script>
+
+
+    window.addEventListener(
+      "load",
+      initializeNavbar
+    );
+
+    navLinks.forEach(
+      function (link) {
+
+        link.addEventListener(
+          "click",
+          function (event) {
+
+            const currentPage =
+              window.location.pathname;
+
+            const target =
+              new URL(
+                this.href,
+                window.location.href
+              );
+
+
+            /* Kalau klik halaman yang sedang dibuka */
+
+            if (
+              target.pathname ===
+              currentPage
+            ) {
+
+              event.preventDefault();
+
+              moveIndicator(this);
+
+              return;
+
+            }
+
+
+
+            /* Hentikan navigasi sebentar */
+
+            event.preventDefault();
+
+
+            /* Tandai sedang bergerak */
+
+            navbar.classList.add(
+              "moving"
+            );
+
+
+            /* Hapus active */
+
+            navLinks.forEach(
+              function (item) {
+
+                item.classList.remove(
+                  "active"
+                );
+
+              }
+            );
+
+
+            /* Aktifkan menu tujuan */
+
+            this.classList.add(
+              "active"
+            );
+
+
+            /* Gerakkan glass */
+
+            moveIndicator(this);
+
+
+            /* Tunggu animasi selesai */
+
+            setTimeout(
+              function () {
+
+                document.body.classList.add(
+                  "page-leaving"
+                );
+
+              },
+              300
+            );
+
+
+            /* Pindah halaman */
+
+            setTimeout(
+              function () {
+
+                window.location.href =
+                  target.href;
+
+              },
+              450
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    window.addEventListener(
+      "resize",
+      function () {
+
+        const active =
+          document.querySelector(
+            ".navbar a.active"
+          );
+
+        moveIndicator(active);
+
+      }
+    );
+
+  </script>
+
+
+
+  <!-- =====================================================
+       BIRTHDAY NOTIFICATION SCRIPT
+  ====================================================== -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+        const monthNames = [
+          "Januari",
+          "Februari",
+          "Maret",
+          "April",
+          "Mei",
+          "Juni",
+          "Juli",
+          "Agustus",
+          "September",
+          "Oktober",
+          "November",
+          "Desember"
+        ];
+
+
+        const birthdayBox =
+          document.getElementById(
+            "BirthdayNotification"
+          );
+
+        const birthdayTitle =
+          document.getElementById(
+            "birthdayTitle"
+          );
+
+        const birthdayMessage =
+          document.getElementById(
+            "birthdayMessage"
+          );
+
+        const birthdayCards =
+          document.getElementById(
+            "birthdayCards"
+          );
+
+
+        if (
+          !birthdayBox ||
+          !birthdayTitle ||
+          !birthdayMessage ||
+          !birthdayCards
+        ) {
+          return;
+        }
+
+
+
+        /* =========================================
+           TESTING
+
+           Contoh:
+           index.html?birthdayTest=27-08
+
+           atau:
+
+           index.html?birthdayTest=27/08
+        ========================================= */
+
+        const testDate =
+          new URLSearchParams(
+            window.location.search
+          ).get("birthdayTest");
+
+
+        const now =
+          new Date();
+
+
+        let todayDay =
+          now.getDate();
+
+        let todayMonth =
+          now.getMonth();
+
+
+
+        if (testDate) {
+
+          const [d, m] =
+            testDate
+              .split(/[-/]/)
+              .map(Number);
+
+
+          if (
+            Number.isInteger(d) &&
+            Number.isInteger(m) &&
+            d >= 1 &&
+            d <= 31 &&
+            m >= 1 &&
+            m <= 12
+          ) {
+
+            todayDay =
+              d;
+
+            todayMonth =
+              m - 1;
+
+          }
+
+        }
+
+
+
+        /* =========================================
+           AMBIL CARD SISWA
+        ========================================= */
+
+        const memberContainers =
+          document.querySelectorAll(
+            "#Member .card-container"
+          );
+
+
+        const studentContainer =
+          memberContainers[1];
+
+
+        if (!studentContainer) {
+          return;
+        }
+
+
+        const cards =
+          [
+            ...studentContainer.querySelectorAll(
+              ".card"
+            )
+          ];
+
+
+
+        /* =========================================
+           AMBIL DATA ULANG TAHUN
+        ========================================= */
+
+        const birthdays =
+          cards
+            .map(card => {
+
+              const name =
+                card
+                  .querySelector("h3")
+                  ?.textContent
+                  .trim();
+
+              const dateText =
+                card
+                  .querySelector("p")
+                  ?.textContent
+                  .trim();
+
+
+              if (
+                !name ||
+                !dateText ||
+                dateText === "-"
+              ) {
+                return null;
+              }
+
+
+              const parts =
+                dateText
+                  .replace(/\s+/g, " ")
+                  .trim()
+                  .split(" ");
+
+
+              if (parts.length < 2) {
+                return null;
+              }
+
+
+              const day =
+                Number(
+                  parts[0]
+                    .replace(/[^0-9]/g, "")
+                );
+
+
+              const month =
+                monthNames.indexOf(
+                  parts[1]
+                    .replace(/[^A-Za-zÀ-ÿ]/g, "")
+                );
+
+
+              if (
+                !Number.isInteger(day) ||
+                month < 0
+              ) {
+                return null;
+              }
+
+
+              return {
+                card,
+                name,
+                day,
+                month
+              };
+
+            })
+            .filter(Boolean);
+
+
+
+        /* =========================================
+           CARI YANG ULANG TAHUN HARI INI
+        ========================================= */
+
+        const todaysBirthdays =
+          birthdays.filter(
+            person =>
+              person.day === todayDay &&
+              person.month === todayMonth
+          );
+
+
+        if (!todaysBirthdays.length) {
+          return;
+        }
+
+
+
+        /* =========================================
+           NAMA
+        ========================================= */
+
+        const names =
+          todaysBirthdays.map(
+            person => person.name
+          );
+
+
+        const nameText =
+          names.length === 1
+
+            ? names[0]
+
+            : names
+                .slice(0, -1)
+                .join(", ") +
+              " dan " +
+              names[names.length - 1];
+
+
+
+        /* =========================================
+           JUDUL
+        ========================================= */
+
+        birthdayTitle.textContent =
+          names.length === 1
+
+            ? `🎉 Selamat Ulang Tahun, ${nameText}!`
+
+            : `🎉 Selamat Ulang Tahun untuk ${nameText}!`;
+
+
+
+        /* =========================================
+           PESAN
+        ========================================= */
+
+        birthdayMessage.textContent =
+          names.length === 1
+
+            ? "Semoga panjang umur, sehat selalu, semakin sukses, dan semua cita-citanya tercapai. 🎂✨"
+
+            : "Semoga semuanya selalu sehat, bahagia, semakin sukses, dan semua cita-citanya tercapai. 🎂✨";
+
+
+
+        /* =========================================
+           TAMPILKAN CARD ULANG TAHUN
+        ========================================= */
+
+        todaysBirthdays.forEach(
+          person => {
+
+            const birthdayCard =
+              person.card.cloneNode(true);
+
+            birthdayCard.classList.add(
+              "birthday-student-card"
+            );
+
+            birthdayCards.appendChild(
+              birthdayCard
+            );
+
+            person.card.classList.add(
+              "is-birthday"
+            );
+
+          }
+        );
+
+
+
+        /* =========================================
+           TAMPILKAN BOX
+        ========================================= */
+
+        birthdayBox.hidden = false;
+
+
+
+        /* =========================================
+           TOAST
+        ========================================= */
+
+        const toast =
+          document.createElement(
+            "div"
+          );
+
+
+        toast.className =
+          "birthday-toast";
+
+
+        toast.innerHTML = `
+          <span class="birthday-toast-icon">
+            🎂
+          </span>
+
+          <div>
+            <strong>
+              Birthday Alert!
+            </strong>
+
+            <span>
+              ${nameText} ulang tahun hari ini 🎉
+            </span>
+          </div>
+
+          <button
+            type="button"
+            aria-label="Tutup notifikasi"
+          >
+            ×
+          </button>
+        `;
+
+
+        document.body.appendChild(
+          toast
+        );
+
+
+        toast
+          .querySelector("button")
+          .addEventListener(
+            "click",
+            () => {
+
+              toast.classList.add(
+                "hide"
+              );
+
+              setTimeout(
+                () =>
+                  toast.remove(),
+                250
+              );
+
+            }
+          );
+
+
+
+        /* =========================================
+           BROWSER NOTIFICATION
+        ========================================= */
+
+        if (
+          "Notification" in window &&
+          Notification.permission ===
+            "granted"
+        ) {
+
+          new Notification(
+            "🎂 Ulang Tahun XI RPL 1",
+            {
+              body:
+                `${nameText} ulang tahun hari ini! Selamat ulang tahun 🎉`
+            }
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
+
+
+  <!-- =====================================================
+       COUNTDOWN + BIRTHDAY POPUP
+       SUDAH DIPERBAIKI
+  ====================================================== -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+
+        /* =========================================
+           NAMA BULAN INDONESIA
+        ========================================= */
+
+        const monthNames = [
+          "Januari",
+          "Februari",
+          "Maret",
+          "April",
+          "Mei",
+          "Juni",
+          "Juli",
+          "Agustus",
+          "September",
+          "Oktober",
+          "November",
+          "Desember"
+        ];
+
+
+
+        /* =========================================
+           AMBIL SEMUA CARD SISWA
+        ========================================= */
+
+        const memberContainers =
+          document.querySelectorAll(
+            "#Member .card-container"
+          );
+
+
+        const studentContainer =
+          memberContainers[1];
+
+
+        if (!studentContainer) {
+          return;
+        }
+
+
+        const cards =
+          [
+            ...studentContainer.querySelectorAll(
+              ".card"
+            )
+          ];
+
+
+
+        /* =========================================
+           POPUP ELEMENT
+        ========================================= */
+
+        const popup =
+          document.getElementById(
+            "BirthdayPopup"
+          );
+
+        const popupPhoto =
+          document.getElementById(
+            "birthdayPopupPhoto"
+          );
+
+        const popupTitle =
+          document.getElementById(
+            "birthdayPopupTitle"
+          );
+
+        const popupDate =
+          document.getElementById(
+            "birthdayPopupDate"
+          );
+
+
+
+        /* =========================================
+           PARSE TANGGAL
+        ========================================= */
+
+        function parseBirthday(text) {
+
+          if (!text) {
+            return null;
+          }
+
+
+          const match =
+            text
+              .trim()
+              .match(
+                /^(\d{1,2})\s+([A-Za-zÀ-ÿ]+)\s+(\d{4})$/i
+              );
+
+
+          if (!match) {
+            return null;
+          }
+
+
+          const day =
+            Number(match[1]);
+
+
+          const month =
+            monthNames.findIndex(
+              month =>
+                month.toLowerCase() ===
+                match[2].toLowerCase()
+            );
+
+
+          if (
+            month < 0 ||
+            !Number.isInteger(day)
+          ) {
+            return null;
+          }
+
+
+          return {
+            day,
+            month,
+            year: Number(match[3])
+          };
+
+        }
+
+
+
+        /* =========================================
+           DATA SISWA
+        ========================================= */
+
+        const students =
+          cards
+            .map(card => {
+
+              const name =
+                card
+                  .querySelector("h3")
+                  ?.textContent
+                  .trim();
+
+
+              const dateText =
+                card
+                  .querySelector("p")
+                  ?.textContent
+                  .trim();
+
+
+              const photo =
+                card
+                  .querySelector("img")
+                  ?.getAttribute("src");
+
+
+              const birthday =
+                dateText
+                  ? parseBirthday(dateText)
+                  : null;
+
+
+              const countdown =
+                card.querySelector(
+                  ".birthday-countdown"
+                );
+
+
+              /*
+                Kalau tanggal kosong / "-"
+                jangan ikut countdown.
+              */
+
+              if (
+                !name ||
+                !birthday ||
+                !countdown
+              ) {
+                return null;
+              }
+
+
+              return {
+                card,
+                name,
+                photo,
+                dateText,
+                birthday,
+                countdown
+              };
+
+            })
+            .filter(Boolean);
+
+
+
+        /* =========================================
+           CARI ULANG TAHUN BERIKUTNYA
+        ========================================= */
+
+        function getNextBirthday(
+          birthday,
+          now
+        ) {
+
+          /*
+            Mulai dari ulang tahun
+            pada tahun sekarang.
+          */
+
+          let nextBirthday =
+            new Date(
+              now.getFullYear(),
+              birthday.month,
+              birthday.day,
+              0,
+              0,
+              0,
+              0
+            );
+
+
+          /*
+            Kalau tanggal ulang tahun
+            sudah lewat, gunakan tahun depan.
+          */
+
+          if (
+            nextBirthday.getTime() <=
+            now.getTime()
+          ) {
+
+            nextBirthday =
+              new Date(
+                now.getFullYear() + 1,
+                birthday.month,
+                birthday.day,
+                0,
+                0,
+                0,
+                0
+              );
+
+          }
+
+
+          return nextBirthday;
+
+        }
+
+
+
+        /* =========================================
+           FORMAT COUNTDOWN
+        ========================================= */
+
+        function formatCountdown(
+          milliseconds
+        ) {
+
+          let totalSeconds =
+            Math.floor(
+              milliseconds / 1000
+            );
+
+
+          if (totalSeconds < 0) {
+            totalSeconds = 0;
+          }
+
+
+          const days =
+            Math.floor(
+              totalSeconds / 86400
+            );
+
+
+          const hours =
+            Math.floor(
+              (totalSeconds % 86400) /
+              3600
+            );
+
+
+          const minutes =
+            Math.floor(
+              (totalSeconds % 3600) /
+              60
+            );
+
+
+          const seconds =
+            totalSeconds % 60;
+
+
+          return (
+            `${days} hari ` +
+            `${String(hours).padStart(2, "0")}:` +
+            `${String(minutes).padStart(2, "0")}:` +
+            `${String(seconds).padStart(2, "0")}`
+          );
+
+        }
+
+
+
+        /* =========================================
+           UPDATE COUNTDOWN
+        ========================================= */
+
+        function updateCountdowns() {
+
+          const now =
+            new Date();
+
+
+          students.forEach(
+            student => {
+
+
+              /* =================================
+                 CEK APAKAH HARI INI ULANG TAHUN
+              ================================= */
+
+              const isBirthdayToday =
+                now.getDate() ===
+                  student.birthday.day &&
+
+                now.getMonth() ===
+                  student.birthday.month;
+
+
+              if (isBirthdayToday) {
+
+                student.countdown.textContent =
+                  "🎉 HARI INI!";
+
+
+                student.countdown.classList.add(
+                  "birthday-today"
+                );
+
+
+                student.card.classList.add(
+                  "birthday-today-card"
+                );
+
+
+                return;
+
+              }
+
+
+
+              /* =================================
+                 CARI ULANG TAHUN BERIKUTNYA
+              ================================= */
+
+              const nextBirthday =
+                getNextBirthday(
+                  student.birthday,
+                  now
+                );
+
+
+              const difference =
+                nextBirthday.getTime() -
+                now.getTime();
+
+
+
+              /* =================================
+                 TAMPILKAN COUNTDOWN
+              ================================= */
+
+              student.countdown.textContent =
+                "🎂 " +
+                formatCountdown(
+                  difference
+                ) +
+                " lagi";
+
+
+              student.countdown.classList.remove(
+                "birthday-today"
+              );
+
+
+              student.card.classList.remove(
+                "birthday-today-card"
+              );
+
+            }
+          );
+
+        }
+
+
+
+        /* =========================================
+           JALANKAN COUNTDOWN PERTAMA KALI
+        ========================================= */
+
+        updateCountdowns();
+
+
+
+        /* =========================================
+           UPDATE SETIAP 1 DETIK
+        ========================================= */
+
+        setInterval(
+          updateCountdowns,
+          1000
+        );
+
+
+
+        /* =========================================
+           POPUP ULANG TAHUN
+        ========================================= */
+
+        function showBirthdayPopup(
+          student
+        ) {
+
+          if (!popup) {
+            return;
+          }
+
+
+          popupPhoto.src =
+            student.photo || "";
+
+
+          popupPhoto.alt =
+            `Foto ${student.name}`;
+
+
+          popupTitle.textContent =
+            `🎉 Selamat Ulang Tahun, ${student.name}!`;
+
+
+          popupDate.textContent =
+            `Lahir: ${student.dateText}`;
+
+
+          popup.hidden =
+            false;
+
+
+          popup.setAttribute(
+            "aria-hidden",
+            "false"
+          );
+
+
+          document.body.classList.add(
+            "birthday-popup-open"
+          );
+
+
+          requestAnimationFrame(
+            () =>
+              popup.classList.add(
+                "show"
+              )
+          );
+
+        }
+
+
+
+        /* =========================================
+           TUTUP POPUP
+        ========================================= */
+
+        function closeBirthdayPopup() {
+
+          if (
+            !popup ||
+            popup.hidden
+          ) {
+            return;
+          }
+
+
+          popup.classList.remove(
+            "show"
+          );
+
+
+          popup.setAttribute(
+            "aria-hidden",
+            "true"
+          );
+
+
+          document.body.classList.remove(
+            "birthday-popup-open"
+          );
+
+
+          setTimeout(
+            () => {
+
+              popup.hidden =
+                true;
+
+            },
+            250
+          );
+
+        }
+
+
+
+        /* =========================================
+           EVENT CLOSE POPUP
+        ========================================= */
+
+        if (popup) {
+
+          popup
+            .querySelectorAll(
+              "[data-birthday-close]"
+            )
+            .forEach(
+              button => {
+
+                button.addEventListener(
+                  "click",
+                  closeBirthdayPopup
+                );
+
+              }
+            );
+
+
+          document.addEventListener(
+            "keydown",
+            event => {
+
+              if (
+                event.key ===
+                "Escape"
+              ) {
+
+                closeBirthdayPopup();
+
+              }
+
+            }
+          );
+
+        }
+
+
+
+        /* =========================================
+           CEK ULANG TAHUN HARI INI
+        ========================================= */
+
+        const now =
+          new Date();
+
+
+        const todayKey =
+          `${now.getFullYear()}-` +
+          `${now.getMonth() + 1}-` +
+          `${now.getDate()}`;
+
+
+        const shownKey =
+          sessionStorage.getItem(
+            "birthdayPopupShown"
+          );
+
+
+        const todaysBirthdays =
+          students.filter(
+            student =>
+              student.birthday.day ===
+                now.getDate() &&
+
+              student.birthday.month ===
+                now.getMonth()
+          );
+
+
+
+        /* =========================================
+           TAMPILKAN POPUP
+        ========================================= */
+
+        if (
+          todaysBirthdays.length &&
+          shownKey !== todayKey
+        ) {
+
+
+          let index = 0;
+
+
+          const showNext = () => {
+
+            if (
+              index >=
+              todaysBirthdays.length
+            ) {
+              return;
+            }
+
+
+            showBirthdayPopup(
+              todaysBirthdays[index]
+            );
+
+
+            index++;
+
+
+            if (
+              index <
+              todaysBirthdays.length
+            ) {
+
+              const closeButton =
+                popup?.querySelector(
+                  ".birthday-popup-close"
+                );
+
+
+              const handler =
+                () => {
+
+                  closeButton
+                    ?.removeEventListener(
+                      "click",
+                      handler
+                    );
+
+
+                  setTimeout(
+                    showNext,
+                    300
+                  );
+
+                };
+
+
+              closeButton
+                ?.addEventListener(
+                  "click",
+                  handler
+                );
+
+            }
+
+          };
+
+
+          sessionStorage.setItem(
+            "birthdayPopupShown",
+            todayKey
+          );
+
+
+          setTimeout(
+            showNext,
+            700
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
 
 </body>
+
 </html>
