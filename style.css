@@ -821,28 +821,317 @@ body.page-leaving {
     min-height: 210px;
   }
 
-  .navbar {
-    top: 8px;
-    width: calc(100% - 14px);
-    border-radius: 18px;
-  }
+  /* =========================================================
+   NAVBAR
+========================================================= */
 
-  .navbar ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+.navbar {
+    position: sticky;
+    top: 14px;
+    z-index: 50;
 
-  .navbar a {
-    padding: 9px 6px;
-    border-radius: 13px;
-    text-align: center;
-    font-size: 0.74rem;
-  }
+    width: min(760px, calc(100% - 24px));
 
-  .navbar ul::after {
-    height: 34px;
-    border-radius: 12px;
-  }
+    margin: 14px auto 0;
+    padding: 7px;
+
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 22px;
+
+    background: rgba(17, 24, 39, 0.72);
+
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+
+    box-shadow:
+        0 14px 40px rgba(0,0,0,0.20),
+        inset 0 1px 0 rgba(255,255,255,0.16);
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* =========================================
+   BACKGROUND NAVBAR
+========================================= */
+
+.navbar::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -2;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,255,255,0.11),
+            rgba(255,255,255,0.025) 45%,
+            rgba(255,255,255,0.08)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   NAVBAR LIST
+========================================= */
+
+.navbar ul {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 3px;
+
+    list-style: none;
+
+    width: 100%;
+}
+
+
+/* =========================================
+   NAVBAR LINK
+========================================= */
+
+.navbar a {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 17px;
+
+    border-radius: 16px;
+
+    color: rgba(255,255,255,0.67);
+
+    font-size: 0.82rem;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.navbar a:hover,
+.navbar a.active {
+    color: #fff;
+}
+
+
+.navbar a:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   GLASS INDICATOR
+========================================= */
+
+.navbar ul::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 1;
+
+    top: var(--nav-top, 0px);
+    left: var(--nav-left, 0px);
+
+    width: var(--nav-width, 0px);
+    height: var(--nav-height, 40px);
+
+    transform: none;
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.22),
+            rgba(255,255,255,0.07)
+        );
+
+    box-shadow:
+        0 6px 20px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    pointer-events: none;
+
+    transition:
+        left 0.45s cubic-bezier(0.22,1,0.36,1),
+        top 0.45s cubic-bezier(0.22,1,0.36,1),
+        width 0.45s cubic-bezier(0.22,1,0.36,1),
+        height 0.45s cubic-bezier(0.22,1,0.36,1);
+}
+
+
+/* =========================================
+   SAAT PINDAH HALAMAN
+========================================= */
+
+.navbar.moving ul::after {
+    filter: brightness(1.12);
+}
+
+
+/* =========================================================
+   NAVBAR MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+
+    .navbar {
+        top: 8px;
+
+        width: calc(100% - 28px);
+
+        margin: 12px auto 0;
+
+        padding: 6px;
+
+        border-radius: 18px;
+    }
+
+
+    /* =====================================
+       GRID 2 x 2
+    ===================================== */
+
+    .navbar ul {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        grid-template-rows:
+            repeat(2, auto);
+
+        gap: 4px;
+
+        width: 100%;
+    }
+
+
+    /* =====================================
+       LIST ITEM
+    ===================================== */
+
+    .navbar li {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    /* =====================================
+       LINK MOBILE
+    ===================================== */
+
+    .navbar a {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+
+        min-height: 42px;
+
+        padding: 8px 4px;
+
+        border-radius: 13px;
+
+        text-align: center;
+
+        font-size: 0.72rem;
+
+        line-height: 1.2;
+
+        white-space: normal;
+
+        word-break: normal;
+
+        overflow-wrap: break-word;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================
+       GLASS MOBILE
+    ===================================== */
+
+    .navbar ul::after {
+        height: var(--nav-height, 42px);
+
+        border-radius: 13px;
+
+        transition:
+            left 0.35s cubic-bezier(0.22,1,0.36,1),
+            top 0.35s cubic-bezier(0.22,1,0.36,1),
+            width 0.35s cubic-bezier(0.22,1,0.36,1),
+            height 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+}
+
+
+/* =========================================================
+   HP KECIL
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .navbar {
+        width: calc(100% - 20px);
+
+        padding: 5px;
+
+        border-radius: 16px;
+    }
+
+
+    .navbar ul {
+        gap: 3px;
+    }
+
+
+    .navbar a {
+        min-height: 40px;
+
+        padding: 7px 3px;
+
+        font-size: 0.67rem;
+
+        border-radius: 12px;
+    }
+
+
+    .navbar ul::after {
+        border-radius: 12px;
+    }
+}
 
   .schedule-grid {
     display: flex;
