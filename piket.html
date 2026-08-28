@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Piket — AAKARSHAN XI RPL 1</title>
+  <link rel="icon" type="image/png" href="images/pplg1.png">
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap)" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <img src="images/pplg1.png" alt="Logo Kelas" class="hero-logo">
+    <p class="eyebrow">XI RPL 1 • SMK Negeri 1 Purbalingga</p>
+    <h1 class="hero-title">AAKARSHAN</h1>
+    <p class="hero-headline">Jadwal Piket</p>
+    <nav class="navbar" aria-label="Navigasi utama">
+      <ul>
+        <li><a class="" href="index.html">Home</a></li>
+        <li><a class="" href="jadwal.html">Jadwal Pelajaran</a></li>
+        <li><a class="active" href="piket.html">Jadwal Piket</a></li>
+        <li><a class="" href="struktur.html">Struktur Kelas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="box">
+      <h2 class="jadwal-piket-title">Jadwal Piket</h2>
+      <p class="section-note">Jadwal Piket 11 RPL 1</p>
+      <div class="piket-grid">
+        <div class="piket-card">
+          <h3 class="day-title accent-blue">Senin</h3>
+          <ul class="piket-list">
+            <li>Kiano</li>
+            <li>Fatih</li>
+            <li>Erwina</li>
+            <li>Alena</li>
+            <li>Calista</li>
+            <li>Evan</li>
+            <li>Efraim</li>
+          </ul>
+        </div>
+        <div class="piket-card">
+          <h3 class="day-title accent-purple">Selasa</h3>
+          <ul class="piket-list">
+            <li>Banyu</li>
+            <li>Erni</li>
+            <li>Difa</li>
+            <li>Geisha</li>
+            <li>Deka</li>
+            <li>Nauval</li>
+            <li>Valen</li>
+          </ul>
+        </div>
+        <div class="piket-card">
+          <h3 class="day-title accent-green">Rabu</h3>
+          <ul class="piket-list">
+            <li>Titis</li>
+            <li>Fajri</li>
+            <li>Fajar</li>
+            <li>Heri</li>
+            <li>Saumi</li>
+            <li>Desta</li>
+            <li>Dyna</li>
+          </ul>
+        </div>
+        <div class="piket-card">
+          <h3 class="day-title accent-orange">Kamis</h3>
+          <ul class="piket-list">
+            <li>Rakha</li>
+            <li>Tisya</li>
+            <li>Bylva</li>
+            <li>Bagus</li>
+            <li>Adit</li>
+            <li>Tatas</li>
+            <li>Yuanita</li>
+          </ul>
+        </div>
+        <div class="piket-card">
+          <h3 class="day-title accent-pink">Jumat</h3>
+          <ul class="piket-list">
+            <li>Kevin</li>
+            <li>Hafsa</li>
+            <li>Elhib</li>
+            <li>Afif</li>
+            <li>Zidan</li>
+            <li>Farah</li>
+            <li>Lusy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; AAKARSHAN · XI RPL 1 SMK Negeri 1 Purbalingga
+  </footer>
+
+  <script>
+  /* =========================================
+     SLIDING NAVBAR
+  ========================================= */
+
+  const navbar =
+    document.querySelector(".navbar");
+
+  const navList =
+    document.querySelector(".navbar ul");
+
+  const navLinks =
+    document.querySelectorAll(".navbar a");
+
+
+  /* =========================================
+     POSISI GLASS PILL
+  ========================================= */
+
+  function moveIndicator(link) {
+
+    if (!link || !navList) {
+      return;
+    }
+
+    const linkBox =
+      link.getBoundingClientRect();
+
+    const listBox =
+      navList.getBoundingClientRect();
+
+    const left =
+      linkBox.left -
+      listBox.left;
+
+    const width =
+      linkBox.width;
+
+
+    navList.style.setProperty(
+      "--nav-left",
+      left + "px"
+    );
+
+    navList.style.setProperty(
+      "--nav-width",
+      width + "px"
+    );
+  }
+
+
+  /* =========================================
+     SAAT HALAMAN DIBUKA
+  ========================================= */
+
+  function initializeNavbar() {
+
+    const active =
+      document.querySelector(
+        ".navbar a.active"
+      );
+
+    moveIndicator(active);
+  }
+
+
+  window.addEventListener(
+    "load",
+    initializeNavbar
+  );
+
+
+  /* =========================================
+     KLIK MENU
+  ========================================= */
+
+  navLinks.forEach(
+    function (link) {
+
+      link.addEventListener(
+        "click",
+        function (event) {
+
+          const currentPage =
+            window.location.pathname;
+
+          const target =
+            new URL(
+              this.href,
+              window.location.href
+            );
+
+
+          /* Kalau klik halaman yang
+             sedang dibuka */
+
+          if (
+            target.pathname ===
+            currentPage
+          ) {
+
+            event.preventDefault();
+
+            moveIndicator(this);
+
+            return;
+          }
+
+
+          /* Hentikan navigasi sebentar */
+
+          event.preventDefault();
+
+
+          /* Tandai sedang bergerak */
+
+          navbar.classList.add(
+            "moving"
+          );
+
+
+          /* Hapus active */
+
+          navLinks.forEach(
+            function (item) {
+
+              item.classList.remove(
+                "active"
+              );
+
+            }
+          );
+
+
+          /* Aktifkan menu tujuan */
+
+          this.classList.add(
+            "active"
+          );
+
+
+          /* =================================
+             INI BAGIAN YANG MEMBUAT
+             GLASS BENAR-BENAR BERGESER
+          ================================= */
+
+          moveIndicator(this);
+
+
+          /* Tunggu animasi selesai */
+
+          setTimeout(
+            function () {
+
+              document.body.classList.add(
+                "page-leaving"
+              );
+
+            },
+            300
+          );
+
+
+          /* Pindah halaman */
+
+          setTimeout(
+            function () {
+
+              window.location.href =
+                target.href;
+
+            },
+            450
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+  /* =========================================
+     RESPONSIVE
+  ========================================= */
+
+  window.addEventListener(
+    "resize",
+    function () {
+
+      const active =
+        document.querySelector(
+          ".navbar a.active"
+        );
+
+      moveIndicator(active);
+    }
+  );
+</script>
+
+</body>
+</html>

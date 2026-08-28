@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Resmi & Ruang Kolaborasi — AAKARSHAN XI RPL 1</title>
+  <link rel="icon" type="image/png" href="images/pplg1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <img src="images/pplg1.png" alt="Logo Kelas" class="hero-logo">
+    <p class="eyebrow">XI RPL 1 • SMK Negeri 1 Purbalingga</p>
+    <h1 class="hero-title">AAKARSHAN</h1>
+    <p class="hero-headline">Keluarga Besar Ibu Khamsyatun Yudiana, S.Pd.I</p>
+
+
+    <nav class="navbar" aria-label="Navigasi utama">
+      <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="jadwal.html">Jadwal Pelajaran</a></li>
+        <li><a href="piket.html">Jadwal Piket</a></li>
+        <li><a href="struktur.html">Struktur Kelas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="box home-box" id="Home">
+      <div class="home-glow" aria-hidden="true"></div>
+      <div class="home-content">
+        <span class="home-kicker">✦ KELAS PALING NYENI</span>
+        <h2>Selamat datang di Kelas XI RPL 1 SMK Negeri 1 Purbalingga</h2>
+        <p>Tahun Ajaran 2026/2027</p>
+      </div>
+    </section>
+
+    <section class="box" id="Member">
+      <span class="section-tag accent-purple">Wali Kelas</span>
+      <div class="wali-heading"><h2>Wali Kelas</h2><span class="wali-caption">Pembimbing Kelas XI RPL 1</span></div>
+      <div class="card-container">
+        <div class="card">
+          <img alt="Wali Kelas" src="images/restu.jpeg" />
+          <h3>Restu Afri W</h3>
+          <a href="https://instagram.com/restu_afriwh" target="_blank">Instagram</a>
+        </div>
+      </div>
+
+      <div class="students-heading"><span class="section-tag accent-blue">MEMBERS</span><h2>Daftar Murid</h2></div>
+      <div class="search-box">
+        <input id="searchInput" onkeyup="searchSiswa()" placeholder="Cari Nama Murid" type="text" />
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <img alt="Adyta" src="images/adit.png" />
+          <h3>Adyta Rizqi S</h3>
+          <p>15 Desember 2009</p>
+          <a href="https://instagram.com/dit_zx7" target="_blank">Instagram</a>
+        </div>
+        <!-- (Data murid lainnya juga mengikuti format yang sama di atas) -->
+        <div class="card">
+          <img alt="Afif" src="images/afif.png" />
+          <h3>Afif Nur H</h3>
+          <p>06 Agustus 2009</p>
+          <a href="https://instagram.com/susukocokrasaacokelatt_" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Alena" src="images/alena.png" />
+          <h3>Alena Baby S</h3>
+          <p>03 November 2010</p>
+          <a href="https://www.instagram.com/alenays__" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Naufal" src="images/ananda.png" />
+          <h3>Ananda Nauval B</h3>
+          <p>15 April 2010</p>
+          <a href="https://www.instagram.com/defghi_qn" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Antara" src="images/antara.png" />
+          <h3>Antara Banyu P</h3>
+          <p>06 Desember 2009</p>
+          <a href="https://instagram.com/cksqeu" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Bagus" src="images/bagus.png" />
+          <h3>Bagus Arrasyid R</h3>
+          <p>17 Agustus 2010</p>
+          <a href="https://instagram.com/rdva_yx" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Calista" src="images/calista.png" />
+          <h3>Calista Azra R</h3>
+          <p>27 Agustus 2010</p>
+          <a href="https://instagram.com/clszraa" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Tisya" src="images/tisya.png" />
+          <h3>Cristian Tisya A</h3>
+          <p>06 November 2009</p>
+          <a href="https://instagram.com/cristiantisyaandriani" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Bylva" src="images/bylva.png" />
+          <h3>Deandra Bylva K</h3>
+          <p>-</p>
+          <a href="https://instagram.com/0501_dumpp" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Deka" src="images/deka.png" />
+          <h3>Deka Fajar B.A</h3>
+          <p>29 September 2009</p>
+          <a href="https://instagram.com/fadekaa0" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Desta" src="images/desta.png" />
+          <h3>Desta Nur E</h3>
+          <p>31 Desember 2010</p>
+          <a href="https://instagram.com/des_suka_mu" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Difa" src="images/difa.png" />
+          <h3>Difa Milkalia A</h3>
+          <p>-</p>
+          <a href="https://instagram.com/dipaa_milka.docx" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Efraim" src="images/efra.png" />
+          <h3>Efraim Aditya</h3>
+          <p>21 Oktober 2009</p>
+          <a href="https://instagram.com/efraaimm7" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Elhib" src="images/elhib.png" />
+          <h3>Elhib Maouly Saputri Alk</h3>
+          <p>05 Oktober 2010</p>
+          <a href="https://instagram.com/nighttr3vde" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Erniesya" src="images/erni.png" />
+          <h3>Erniesya Kurniasih</h3>
+          <p>13 Januari 2010</p>
+          <a href="https://instagram.com/ernsaaaa" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Erwina" src="images/erwina.png" />
+          <h3>Erwina Widya N</h3>
+          <p>29 November 2010</p>
+          <a href="https://instagram.com/ewna_nrw" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Evan" src="images/evan.png" />
+          <h3>Evan Putra P</h3>
+          <p>3 Maret 2010</p>
+          <a href="https://instagram.com/_evannputra" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Fajar" src="images/fajar.png" />
+          <h3>Fajar Hidayah</h3>
+          <p>11 Desember 2009</p>
+          <a href="https://instagram.com/fajar_hidayah01" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Fajri" src="images/fajri.png" />
+          <h3>Fajri Tahsin B</h3>
+          <p>06 Agustus 2009</p>
+          <a href="https://instagram.com/ppaajjrii" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Farah" src="images/farah.png" />
+          <h3>Farah Nuralifa</h3>
+          <p>21 Maret 2010</p>
+          <a href="https://instagram.com/lielyf.css" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Fatih" src="images/fatih.png" />
+          <h3>Fatih Badru Z</h3>
+          <p>24 Maret 2009</p>
+          <a href="https://instagram.com/_fthbzz" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Geisha" src="images/geisha.png" />
+          <h3>Geisha Fauziyah</h3>
+          <p>14 April 2010</p>
+          <a href="https://instagram.com/gsfh_1" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Hafsa" src="images/hafsa.png" />
+          <h3>Hafsa Lanika M</h3>
+          <p>11 November 2009</p>
+          <a href="https://instagram.com/hfs.lm" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Heri" src="images/heri.png" />
+          <h3>Heri Setiawan</h3>
+          <p>18 Maret 2010</p>
+          <a href="https://instagram.com/heriistiawannn" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Kevin" src="images/kevin.png" />
+          <h3>Kevin Veda R</h3>
+          <p>6 Juli 2010</p>
+          <a href="https://instagram.com/agk_alamak" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Kiano" src="images/kiano.png" />
+          <h3>Kiano Mahendra Gusti K</h3>
+          <p>26 Juni 2010</p>
+          <a href="https://instagram.com/kianomhndra_" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="Lusy" src="images/lusy.png" />
+          <h3>Lusy Lukita S</h3>
+          <p>22 Januari 2010</p>
+          <a href="https://instagram.com/jallyyysb" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="dyna" src="images/dyna.png" />
+          <h3>Medyna Aisya A</h3>
+          <p>14 Desember 2009</p>
+          <a href="https://instagram.com/jdyesya" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="rakha" src="images/rakha.png" />
+          <h3>Rakha Syakir W</h3>
+          <p>6 November 2009</p>
+          <a href="https://instagram.com/rkhaexc_" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="saumi" src="images/saumi.png" />
+          <h3>Saumi Racika Z</h3>
+          <p>22 Juli 2009</p>
+          <a href="https://instagram.com/cikkk_zzz" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="tatas" src="images/tatas.png" />
+          <h3>Tatas Kesuma J</h3>
+          <p>4 Februari 2010</p>
+          <a href="https://instagram.com/4taaa._" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="titis" src="images/titis.png" />
+          <h3>Titis Alifia</h3>
+          <p>27 Februari 2010</p>
+          <a href="https://instagram.com/t__twiss" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="valen" src="images/valen.png" />
+          <h3>Valen Aulia S</h3>
+          <p>13 Januari 2009</p>
+          <a href="https://instagram.com/_hynpoctonuy$" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="yuanita" src="images/yuanita.png" />
+          <h3>Yuanita Kusuma N</h3>
+          <p>23 Agustus 2010</p>
+          <a href="https://instagram.com/ni_taaaaaaa" target="_blank">Instagram</a>
+        </div>
+        <div class="card">
+          <img alt="zidan" src="images/zidan.png" />
+          <h3>Zidan Agil N</h3>
+          <p>20 Juli 2010</p>
+          <a href="https://instagram.com/danzz_x999" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function searchSiswa() {
+        const input = document.getElementById("searchInput").value.toLowerCase().trim();
+        document.querySelectorAll("#Member .card-container:last-child .card").forEach(card => {
+          const nama = card.querySelector("h3").innerText.toLowerCase();
+          card.style.display = nama.includes(input) ? "" : "none";
+        });
+      }
+    </script>
+  </main>
+
+  <footer>
+    &copy; AAKARSHAN · XI RPL 1 SMK Negeri 1 Purbalingga
+  </footer>
+
+ <script>
+  /* =========================================
+     SLIDING NAVBAR
+  ========================================= */
+
+  const navbar =
+    document.querySelector(".navbar");
+
+  const navList =
+    document.querySelector(".navbar ul");
+
+  const navLinks =
+    document.querySelectorAll(".navbar a");
+
+
+  /* =========================================
+     POSISI GLASS PILL
+  ========================================= */
+
+  function moveIndicator(link) {
+
+    if (!link || !navList) {
+      return;
+    }
+
+    const linkBox =
+      link.getBoundingClientRect();
+
+    const listBox =
+      navList.getBoundingClientRect();
+
+    const left =
+      linkBox.left -
+      listBox.left;
+
+    const width =
+      linkBox.width;
+
+
+    navList.style.setProperty(
+      "--nav-left",
+      left + "px"
+    );
+
+    navList.style.setProperty(
+      "--nav-width",
+      width + "px"
+    );
+  }
+
+
+  /* =========================================
+     SAAT HALAMAN DIBUKA
+  ========================================= */
+
+  function initializeNavbar() {
+
+    const active =
+      document.querySelector(
+        ".navbar a.active"
+      );
+
+    moveIndicator(active);
+  }
+
+
+  window.addEventListener(
+    "load",
+    initializeNavbar
+  );
+
+
+  /* =========================================
+     KLIK MENU
+  ========================================= */
+
+  navLinks.forEach(
+    function (link) {
+
+      link.addEventListener(
+        "click",
+        function (event) {
+
+          const currentPage =
+            window.location.pathname;
+
+          const target =
+            new URL(
+              this.href,
+              window.location.href
+            );
+
+
+          /* Kalau klik halaman yang
+             sedang dibuka */
+
+          if (
+            target.pathname ===
+            currentPage
+          ) {
+
+            event.preventDefault();
+
+            moveIndicator(this);
+
+            return;
+          }
+
+
+          /* Hentikan navigasi sebentar */
+
+          event.preventDefault();
+
+
+          /* Tandai sedang bergerak */
+
+          navbar.classList.add(
+            "moving"
+          );
+
+
+          /* Hapus active */
+
+          navLinks.forEach(
+            function (item) {
+
+              item.classList.remove(
+                "active"
+              );
+
+            }
+          );
+
+
+          /* Aktifkan menu tujuan */
+
+          this.classList.add(
+            "active"
+          );
+
+
+          /* =================================
+             INI BAGIAN YANG MEMBUAT
+             GLASS BENAR-BENAR BERGESER
+          ================================= */
+
+          moveIndicator(this);
+
+
+          /* Tunggu animasi selesai */
+
+          setTimeout(
+            function () {
+
+              document.body.classList.add(
+                "page-leaving"
+              );
+
+            },
+            300
+          );
+
+
+          /* Pindah halaman */
+
+          setTimeout(
+            function () {
+
+              window.location.href =
+                target.href;
+
+            },
+            450
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+  /* =========================================
+     RESPONSIVE
+  ========================================= */
+
+  window.addEventListener(
+    "resize",
+    function () {
+
+      const active =
+        document.querySelector(
+          ".navbar a.active"
+        );
+
+      moveIndicator(active);
+    }
+  );
+</script>
+
+</body>
+</html>
