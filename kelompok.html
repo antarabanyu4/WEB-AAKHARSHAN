@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acak Kelompok - XI RPL 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="jadwal.html">Jadwal</a></li>
+      <li><a href="piket.html">Piket</a></li>
+      <li><a href="struktur.html">Struktur</a></li>
+      <li><a href="kelompok.html" class="active">Kelompok</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="header-title" style="text-align: center; margin-top: 80px;">
+      <h2>Acak Kelompok Belajar</h2>
+      <p>Bagi kelompok kelas secara otomatis, acak, dan adil.</p>
+    </div>
+
+    <!-- Form Input Pengaturan Kelompok -->
+    <div class="generator-container">
+      <div class="form-group radio-group">
+        <label>
+          <input type="radio" name="tipeBagi" value="jumlahKelompok" checked> 
+          Tentukan Jumlah Kelompok
+        </label>
+        <label>
+          <input type="radio" name="tipeBagi" value="jumlahAnak"> 
+          Tentukan Jumlah Anak per Kelompok
+        </label>
+      </div>
+      
+      <div class="form-group input-group">
+        <input type="number" id="inputJumlah" min="2" placeholder="Masukkan angka...">
+        <button onclick="generateKelompok()" class="btn-acak">Acak Sekarang 🎲</button>
+      </div>
+    </div>
+
+    <!-- Tempat Hasil Kelompok Muncul -->
+    <div id="hasilKelompok" class="hasil-container">
+      <!-- Kartu kelompok akan dibuat lewat JavaScript -->
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

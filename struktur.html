@@ -70,6 +70,18 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="galeri.html">
+                        Galeri Kenangan
+                    </a>
+                </li>
+
+                <li>
+                    <a href="kelompok.html">
+                        Kelompok
+                    </a>
+                </li>
+
             </ul>
         </nav>
 
@@ -159,100 +171,7 @@
         &copy; AAKARSHAN · XI RPL 1 SMK Negeri 1 Purbalingga
     </footer>
 
-    <script>
-        const navbar = document.querySelector(".navbar");
-        const navList = document.querySelector(".navbar ul");
-        const navLinks = document.querySelectorAll(".navbar a");
-
-        function moveIndicator(link) {
-            if (!link || !navList) {
-                return;
-            }
-
-            const linkBox = link.getBoundingClientRect();
-            const listBox = navList.getBoundingClientRect();
-
-            const left = linkBox.left - listBox.left;
-            const width = linkBox.width;
-
-            navList.style.setProperty(
-                "--nav-left",
-                `${left}px`
-            );
-
-            navList.style.setProperty(
-                "--nav-width",
-                `${width}px`
-            );
-        }
-
-        function initializeNavbar() {
-            const activeLink = document.querySelector(
-                ".navbar a.active"
-            );
-
-            moveIndicator(activeLink);
-        }
-
-        window.addEventListener(
-            "load",
-            initializeNavbar
-        );
-
-        navLinks.forEach((link) => {
-            link.addEventListener("click", (event) => {
-
-                const currentPage =
-                    window.location.pathname;
-
-                const target =
-                    new URL(
-                        link.href,
-                        window.location.href
-                    );
-
-                if (target.pathname === currentPage) {
-                    event.preventDefault();
-                    moveIndicator(link);
-                    return;
-                }
-
-                event.preventDefault();
-
-                navbar.classList.add("moving");
-
-                navLinks.forEach((item) => {
-                    item.classList.remove("active");
-                });
-
-                link.classList.add("active");
-
-                moveIndicator(link);
-
-                setTimeout(() => {
-                    document.body.classList.add(
-                        "page-leaving"
-                    );
-                }, 300);
-
-                setTimeout(() => {
-                    window.location.href =
-                        target.href;
-                }, 450);
-            });
-        });
-
-        window.addEventListener("resize", () => {
-            const activeLink =
-                document.querySelector(
-                    ".navbar a.active"
-                );
-
-            moveIndicator(activeLink);
-        });
-    </script>
-
+    <script src="script.js"></script>
+        
 </body>
-
 </html>
-```
