@@ -497,10 +497,17 @@ main {
 }
 
 /* Wali Kelas: one prominent centered card */
+.box#Member > .card-container:first-of-type {
+  margin-bottom: 22px;
+}
+
 .box#Member > .card-container:first-of-type .card {
-  flex-basis: 290px;
-  width: 290px;
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 300px;
+  width: min(100%, 300px);
+  padding: 18px;
   border-color: #ddd6fe;
   background:
     radial-gradient(circle at 50% 0%, rgba(124,58,237,0.10), transparent 11rem),
@@ -514,7 +521,17 @@ main {
 }
 
 .box#Member > .card-container:first-of-type .card img {
-  border-radius: 16px;
+  display: block;
+  width: min(100%, 260px);
+  height: 260px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  margin: 0 auto 16px;
+  padding: 4px;
+  border-radius: 18px;
+  background: #f1f5f9;
+  box-shadow: 0 8px 25px rgba(23,32,51,0.08);
 }
 
 .box#Member > .card-container:first-of-type .card h3 {
@@ -1258,68 +1275,79 @@ body.page-leaving {
   font-size: 0.84rem;
 }
 
+/* =========================================
+   STYLE BIRTHDAY TOAST NOTIFICATION
+========================================= */
 .birthday-toast {
   position: fixed;
-  right: 20px;
   bottom: 20px;
-  z-index: 1000;
+  right: 20px;
+  background-color: #fff;
+  border-left: 5px solid #ff6b81;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 15px 20px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  width: min(380px, calc(100% - 30px));
-  padding: 13px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 18px;
-  background: rgba(20, 27, 42, 0.88);
-  color: #fff;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(18px) saturate(150%);
-  -webkit-backdrop-filter: blur(18px) saturate(150%);
-  animation: toastIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.birthday-toast-icon {
-  display: grid;
-  place-items: center;
-  flex: 0 0 42px;
-  width: 42px;
-  height: 42px;
-  border-radius: 13px;
-  background: rgba(255, 255, 255, 0.12);
-  font-size: 1.35rem;
-}
-
-.birthday-toast div {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-.birthday-toast strong {
-  font-size: 0.82rem;
-}
-
-.birthday-toast span:not(.birthday-toast-icon) {
-  color: rgba(255, 255, 255, 0.76);
-  font-size: 0.76rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.birthday-toast button {
-  margin-left: auto;
-  border: 0;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 1.35rem;
-  line-height: 1;
-  cursor: pointer;
+  gap: 15px;
+  z-index: 9999;
+  animation: slideInRight 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
 
 .birthday-toast.hide {
-  animation: toastOut 0.25s ease both;
+  animation: fadeOutDown 0.3s forwards;
+}
+
+.birthday-toast-icon {
+  font-size: 24px;
+}
+
+.birthday-toast div {
+  display: flex;
+  flex-direction: column;
+}
+
+.birthday-toast strong {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.birthday-toast span {
+  color: #666;
+  font-size: 14px;
+}
+
+.birthday-toast button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.2s;
+}
+
+.birthday-toast button:hover {
+  color: #ff6b81;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutDown {
+  to {
+    transform: translateY(20px);
+    opacity: 0;
+  }
 }
 
 /* Countdown setiap siswa */
@@ -1828,4 +1856,17 @@ body.birthday-popup-open {
 
 .kelompok-card ul li:last-child {
   border-bottom: none;
+}
+
+/* Wali Kelas — responsive photo */
+@media (max-width: 680px) {
+  .box#Member > .card-container:first-of-type .card {
+    width: min(100%, 280px);
+    padding: 16px;
+  }
+
+  .box#Member > .card-container:first-of-type .card img {
+    width: min(100%, 220px);
+    height: 220px;
+  }
 }
