@@ -4,28 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jadwal Piket — AAKARSHAN XI RPL 1</title>
-  <link rel="icon" type="image/png" href="images/pplg1.png">
+  <link rel="icon" type="image/png" href="images/logo new.png">
   <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
   <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
   <link href="[https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap)" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="navbar-wrapper">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">AAKARSHAN</a>
+
+      <button type="button" class="hamburger-btn" id="hamburgerBtn"
+              aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="navbar" id="navMenu" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jadwal.html">Jadwal Pelajaran</a></li>
+          <li><a class="active" href="piket.html">Jadwal Piket</a></li>
+          <li><a href="struktur.html">Struktur Kelas</a></li>
+          <li><a href="galeri.html">Galeri Kenangan</a></li>
+          <li><a href="kelompok.html">Kelompok</a></li>
+          <li><a href="pesan.html">Pesan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
   <header class="hero">
-    <img src="images/pplg1.png" alt="Logo Kelas" class="hero-logo">
+    <img src="images/logo new.png" alt="Logo Kelas" class="hero-logo">
     <p class="eyebrow">XI RPL 1 • SMK Negeri 1 Purbalingga</p>
     <h1 class="hero-title">AAKARSHAN</h1>
     <p class="hero-headline">Jadwal Piket</p>
-    <nav class="navbar" aria-label="Navigasi utama">
-      <ul>
-        <li><a class="" href="index.html">Home</a></li>
-        <li><a class="" href="jadwal.html">Jadwal Pelajaran</a></li>
-        <li><a class="active" href="piket.html">Jadwal Piket</a></li>
-        <li><a class="" href="struktur.html">Struktur Kelas</a></li>
-        <li><a class="" href="galeri.html">Galeri Kenangan</a></li>
-        <li><a class="" href="kelompok.html">Kelompok</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
@@ -97,8 +110,44 @@
     </section>
   </main>
 
-  <footer>
-    &copy; AAKARSHAN · XI RPL 1 SMK Negeri 1 Purbalingga
+   <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-brand-top">
+          <img src="images/logo new.png" alt="Logo Kelas" class="footer-logo">
+          <div>
+            <span class="footer-brand-name">AAKARSHAN <span class="accent-blue">RPL 1</span></span>
+            <span class="footer-brand-sub">SMK Negeri 1 Purbalingga</span>
+          </div>
+        </div>
+
+        <p class="footer-desc">
+          Website resmi kelas XI RPL 1 tahun 2025&ndash;2028.
+        </p>
+
+        <blockquote class="footer-quote">
+          &ldquo;Ceria Gembira Kompak sampai Tamat!&rdquo;
+          <span>Motto Kelas XI RPL 1</span>
+        </blockquote>
+      </div>
+
+      <div class="footer-info">
+        <h4>Informasi Kelas</h4>
+        <ul>
+          <li>Wali Kelas: <strong>Khamsyatun Yudiana</strong></li>
+          <li>Ketua Kelas: <strong>Tata Kesuma J</strong></li>
+          <li>Wakil Ketua: <strong>Desta Nur E</strong></li>
+          <li>Bendahara 1: <strong>Bagus Arrasyid R</strong></li>
+          <li>Bendahara 2: <strong>Hafsa Lanika M</strong></li>
+          <li>Sekretaris 1: <strong>Farah Nuralifa</strong></li>
+          <li>Sekretaris 2: <strong>Elhib Mouly A</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 AAKARSHAN &middot; XI RPL 1 SMK Negeri 1 Purbalingga.
+    </div>
   </footer>
 
   <script src="script.js"></script>

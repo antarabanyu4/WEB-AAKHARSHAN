@@ -4,23 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Acak Kelompok - XI RPL 1</title>
+  <link rel="icon" type="image/png" href="images/logo new.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="galeri.html">Galeri</a></li>
-      <li><a href="jadwal.html">Jadwal</a></li>
-      <li><a href="piket.html">Piket</a></li>
-      <li><a href="struktur.html">Struktur</a></li>
-      <li><a href="kelompok.html" class="active">Kelompok</a></li>
-    </ul>
-  </nav>
+  <div class="navbar-wrapper">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">AAKARSHAN</a>
+
+      <button type="button" class="hamburger-btn" id="hamburgerBtn"
+              aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="navbar" id="navMenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="jadwal.html">Jadwal</a></li>
+          <li><a href="piket.html">Piket</a></li>
+          <li><a href="struktur.html">Struktur</a></li>
+          <li><a href="kelompok.html" class="active">Kelompok</a></li>
+          <li><a href="pesan.html">Pesan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 
   <main>
-    <div class="header-title" style="text-align: center; margin-top: 80px;">
+    <div class="header-title" style="text-align: center; margin-top: 20px;">
       <h2>Acak Kelompok Belajar</h2>
       <p>Bagi kelompok kelas secara otomatis, acak, dan adil.</p>
     </div>
@@ -49,6 +62,45 @@
       <!-- Kartu kelompok akan dibuat lewat JavaScript -->
     </div>
   </main>
+ <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-brand-top">
+          <img src="images/logo new.png" alt="Logo Kelas" class="footer-logo">
+          <div>
+            <span class="footer-brand-name">AAKARSHAN <span class="accent-blue">RPL 1</span></span>
+            <span class="footer-brand-sub">SMK Negeri 1 Purbalingga</span>
+          </div>
+        </div>
+
+        <p class="footer-desc">
+          Website resmi kelas XI RPL 1 tahun 2025&ndash;2028.
+        </p>
+
+        <blockquote class="footer-quote">
+          &ldquo;Ceria Gembira Kompak sampai Tamat!&rdquo;
+          <span>Motto Kelas XI RPL 1</span>
+        </blockquote>
+      </div>
+
+      <div class="footer-info">
+        <h4>Informasi Kelas</h4>
+        <ul>
+          <li>Wali Kelas: <strong>Khamsyatun Yudiana</strong></li>
+          <li>Ketua Kelas: <strong>Tata Kesuma J</strong></li>
+          <li>Wakil Ketua: <strong>Desta Nur E</strong></li>
+          <li>Bendahara 1: <strong>Bagus Arrasyid R</strong></li>
+          <li>Bendahara 2: <strong>Hafsa Lanika M</strong></li>
+          <li>Sekretaris 1: <strong>Farah Nuralifa</strong></li>
+          <li>Sekretaris 2: <strong>Elhib Mouly A</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 AAKARSHAN &middot; XI RPL 1 SMK Negeri 1 Purbalingga.
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

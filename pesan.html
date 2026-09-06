@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan — AAKARSHAN XI RPL 1</title>
+  <link rel="icon" type="image/png" href="images/logo new.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Styling Khusus Halaman Saran */
+    .feedback-form-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.03);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      background: var(--bg);
+      color: var(--ink);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      background: #fff;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    /* Penyesuaian Warna Tombol Sesuai Tema Proyek */
+    .btn-submit {
+      width: 100%;
+      padding: 12px 20px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+    }
+
+    .feedback-list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .feedback-item {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      box-shadow: 0 4px 14px rgba(23, 32, 51, 0.04);
+      position: relative;
+    }
+
+    .feedback-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .feedback-author {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    .feedback-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .feedback-body {
+      font-size: 0.9rem;
+      color: #334155;
+      white-space: pre-line;
+      line-height: 1.5;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar-wrapper">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">AAKARSHAN</a>
+
+      <button type="button" class="hamburger-btn" id="hamburgerBtn"
+              aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="navbar" id="navMenu" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jadwal.html">Jadwal Pelajaran</a></li>
+          <li><a href="piket.html">Jadwal Piket</a></li>
+          <li><a href="struktur.html">Struktur Kelas</a></li>
+          <li><a href="galeri.html">Galeri Kenangan</a></li>
+          <li><a href="kelompok.html">Kelompok</a></li>
+          <li><a href="pesan.html" class="active">Pesan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <img src="images/logo new.png" alt="Logo Kelas" class="hero-logo">
+    <p class="eyebrow">XI RPL 1 • SMK Negeri 1 Purbalingga</p>
+    <h1 class="hero-title">AAKARSHAN</h1>
+    <p class="hero-headline">Kritik & Saran</p>
+
+  </header>
+
+  <main>
+    <section class="box" id="Saran">
+      <span class="section-tag accent-purple">Pesan</span>
+      <h2>Mau Confess? Atau Ada Pesan??</h2>
+      <p class="section-note">Mau confess? apa mau ngirim pesan buat "someone" nya nihh. Bolehh bangett kesinii</p>
+
+      <!-- Form Input Kritik & Saran -->
+      <div class="feedback-form-card">
+        <form id="feedbackForm">
+          <div class="form-group">
+            <label for="namaInput">Nama (Opsional / Anonim):</label>
+            <input type="text" id="namaInput" class="form-control" placeholder="Contoh: Teman Sebelah / Anonim">
+          </div>
+
+          <div class="form-group">
+            <label for="pesanInput">Pesan: *</label>
+            <textarea id="pesanInput" class="form-control" placeholder="Tuliskan pesan kamu di sini..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">Kirim Masukan 🚀</button>
+        </form>
+      </div>
+
+      <!-- Daftar Masukan Publik -->
+      <div class="students-heading">
+        <span class="section-tag accent-blue">LIVE COMMENTS</span>
+        <h2>Masukan Masuk</h2>
+      </div>
+
+      <div id="feedbackList" class="feedback-list-container">
+        <div class="empty-state">Memuat pesan...</div>
+      </div>
+    </section>
+  </main>
+
+   <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-brand-top">
+          <img src="images/logo new.png" alt="Logo Kelas" class="footer-logo">
+          <div>
+            <span class="footer-brand-name">AAKARSHAN <span class="accent-blue">RPL 1</span></span>
+            <span class="footer-brand-sub">SMK Negeri 1 Purbalingga</span>
+          </div>
+        </div>
+
+        <p class="footer-desc">
+          Website resmi kelas XI RPL 1 tahun 2025&ndash;2028.
+        </p>
+
+        <blockquote class="footer-quote">
+          &ldquo;Ceria Gembira Kompak sampai Tamat!&rdquo;
+          <span>Motto Kelas XI RPL 1</span>
+        </blockquote>
+      </div>
+
+      <div class="footer-info">
+        <h4>Informasi Kelas</h4>
+        <ul>
+          <li>Wali Kelas: <strong>Khamsyatun Yudiana</strong></li>
+          <li>Ketua Kelas: <strong>Tata Kesuma J</strong></li>
+          <li>Wakil Ketua: <strong>Desta Nur E</strong></li>
+          <li>Bendahara 1: <strong>Bagus Arrasyid R</strong></li>
+          <li>Bendahara 2: <strong>Hafsa Lanika M</strong></li>
+          <li>Sekretaris 1: <strong>Farah Nuralifa</strong></li>
+          <li>Sekretaris 2: <strong>Elhib Mouly A</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 AAKARSHAN &middot; XI RPL 1 SMK Negeri 1 Purbalingga.
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+ <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+  import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+
+  // Konfigurasi Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyA7cJyNiWhT1Y9lU7JhF9Cg8Sin_FyRazk",
+    authDomain: "aakarshan-rpl.firebaseapp.com",
+    databaseURL: "https://aakarshan-rpl-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "aakarshan-rpl",
+    storageBucket: "aakarshan-rpl.firebasestorage.app",
+    messagingSenderId: "950409680607",
+    appId: "1:950409680607:web:865adcdfd0f9f0d3e57b6a",
+    measurementId: "G-5YNT7YPNLV"
+  };
+
+  // Inisialisasi Firebase & Database
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const saranRef = ref(db, "saran");
+
+  // Element DOM
+  const form = document.getElementById("feedbackForm");
+  const namaInput = document.getElementById("namaInput");
+  const pesanInput = document.getElementById("pesanInput");
+  const feedbackList = document.getElementById("feedbackList");
+
+  // 1. Fungsi Kirim Pesan ke Firebase
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nama = namaInput.value.trim() || "Anonim";
+    const pesan = pesanInput.value.trim();
+
+    if (!pesan) return;
+
+    push(saranRef, {
+      nama: nama,
+      pesan: pesan,
+      timestamp: Date.now()
+    }).then(() => {
+      form.reset();
+    }).catch((error) => {
+      alert("Gagal mengirim pesan: " + error.message);
+    });
+  });
+
+  // 2. Fungsi Ambil & Tampilkan Pesan secara Realtime
+  onValue(saranRef, (snapshot) => {
+    feedbackList.innerHTML = "";
+    const data = snapshot.val();
+
+    if (!data) {
+      feedbackList.innerHTML = '<div class="empty-state">Belum ada pesan masuk. Jadilah yang pertama!</div>';
+      return;
+    }
+
+    // Convert object ke array & urutkan dari yang terbaru
+    const items = Object.values(data).reverse();
+
+    items.forEach((item) => {
+      const date = new Date(item.timestamp).toLocaleString("id-ID", {
+        dateStyle: "medium",
+        timeStyle: "short"
+      });
+
+      const card = document.createElement("div");
+      card.className = "feedback-item";
+      card.innerHTML = `
+        <div class="feedback-header">
+          <span class="feedback-author">${escapeHtml(item.nama)}</span>
+          <span class="feedback-date">${date}</span>
+        </div>
+        <div class="feedback-body">${escapeHtml(item.pesan)}</div>
+      `;
+      feedbackList.appendChild(card);
+    });
+  });
+
+  // Helper Mencegah XSS Injection
+  function escapeHtml(text) {
+    const div = document.createElement("div");
+    div.innerText = text;
+    return div.innerHTML;
+  }
+</script>
+</body>
+</html>

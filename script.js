@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (target.pathname === currentPage) {
         event.preventDefault();
         moveIndicator(this);
+        document.getElementById("navMenu")?.classList.remove("open");
+        document.getElementById("hamburgerBtn")?.classList.remove("open");
         return;
       }
 
@@ -379,3 +381,50 @@ function generateKelompok() {
     hasilContainer.appendChild(grupDiv);
   });
 }
+
+/* =========================================
+   6. HAMBURGER MENU (NAVBAR MOBILE)
+========================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const navMenu = document.getElementById("navMenu");
+  if (!hamburgerBtn || !navMenu) return;
+
+  function openMenu() {
+    navMenu.classList.add("open");
+    hamburgerBtn.classList.add("open");
+    hamburgerBtn.setAttribute("aria-expanded", "true");
+  }
+
+  function closeMenu() {
+    navMenu.classList.remove("open");
+    hamburgerBtn.classList.remove("open");
+    hamburgerBtn.setAttribute("aria-expanded", "false");
+  }
+
+  hamburgerBtn.addEventListener("click", (event) => {
+    event.stopPropagation();
+    navMenu.classList.contains("open") ? closeMenu() : openMenu();
+  });
+
+  // Tutup menu tiap kali salah satu link di dalamnya diklik
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Tutup menu saat klik di luar area navbar
+  document.addEventListener("click", (event) => {
+    const clickedInside = navMenu.contains(event.target) || hamburgerBtn.contains(event.target);
+    if (!clickedInside) closeMenu();
+  });
+
+  // Tutup menu otomatis kalau layar dibesarkan balik ke ukuran desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 680) closeMenu();
+  });
+
+  // Tutup menu dengan tombol Escape
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+});

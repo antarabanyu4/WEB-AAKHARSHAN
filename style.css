@@ -195,12 +195,15 @@ a {
   align-items: center;
   gap: 3px;
   list-style: none;
+  width: 100%;
 }
 
 .navbar a {
   position: relative;
   z-index: 3;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 17px;
   border-radius: 16px;
   color: rgba(255,255,255,0.67);
@@ -223,10 +226,10 @@ a {
   content: "";
   position: absolute;
   z-index: 1;
-  top: 50%;
+  top: var(--nav-top, 50%);
   left: var(--nav-left, 0px);
   width: var(--nav-width, 0px);
-  height: 40px;
+  height: var(--nav-height, 40px);
   transform: translateY(-50%);
   border: 1px solid rgba(255,255,255,0.18);
   border-radius: 15px;
@@ -239,7 +242,9 @@ a {
   pointer-events: none;
   transition:
     left 0.45s cubic-bezier(0.22,1,0.36,1),
-    width 0.45s cubic-bezier(0.22,1,0.36,1);
+    top 0.45s cubic-bezier(0.22,1,0.36,1),
+    width 0.45s cubic-bezier(0.22,1,0.36,1),
+    height 0.45s cubic-bezier(0.22,1,0.36,1);
 }
 
 .navbar.moving ul::after {
@@ -339,6 +344,149 @@ main {
   border-radius: 50%;
   background: rgba(37,99,235,0.06);
   filter: blur(4px);
+}
+
+/* =========================================================
+   ABOUT WE
+   ========================================================= */
+
+.about-box {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(30px, 5vw, 50px) clamp(24px, 5vw, 56px);
+  color: var(--ink);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 32px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.18)),
+    radial-gradient(circle at 20% 15%, rgba(37, 99, 235, 0.14), transparent 55%),
+    radial-gradient(circle at 85% 85%, rgba(124, 58, 237, 0.14), transparent 55%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
+  box-shadow:
+    0 8px 32px rgba(23, 32, 51, 0.14),
+    0 1.5px 0 rgba(255, 255, 255, 0.7) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.25) inset;
+}
+
+/* sapuan cahaya kaca di bagian atas — ciri khas liquid glass */
+.about-box::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.65) 0%,
+    rgba(255, 255, 255, 0.12) 32%,
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+/* garis tepi tipis mengilap */
+.about-box::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0) 70%,
+    rgba(255, 255, 255, 0.5)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.about-box .section-tag {
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.45);
+  color: var(--primary);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.about-glow {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(4px);
+}
+
+.about-glow-a {
+  width: 260px;
+  height: 260px;
+  left: -90px;
+  top: -110px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.30), transparent 70%);
+}
+
+.about-glow-b {
+  width: 300px;
+  height: 300px;
+  right: -110px;
+  bottom: -140px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.28), transparent 70%);
+}
+
+.about-title {
+  position: relative;
+  z-index: 1;
+  margin: 8px auto 6px;
+  font: 800 clamp(1.7rem, 4vw, 2.4rem) Poppins, Arial;
+  letter-spacing: 0.02em;
+  background: linear-gradient(120deg, var(--primary-dark) 0%, var(--primary) 45%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.about-quote-mark {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 0 auto -12px;
+  font: 800 3.4rem/1 Georgia, serif;
+  color: rgba(37, 99, 235, 0.22);
+}
+
+.about-text {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 14px auto 0;
+  color: rgba(23, 32, 51, 0.78);
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
+  line-height: 1.85;
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .about-box {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.82));
+  }
+}
+
+@media (max-width: 620px) {
+  .about-quote-mark {
+    font-size: 2.6rem;
+    margin-bottom: -8px;
+  }
 }
 
 /* =========================================================
@@ -708,6 +856,7 @@ main {
   border-radius: 11px;
   font-size: 0.88rem;
   font-weight: 800;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .btn-primary {
@@ -756,6 +905,132 @@ footer {
   text-align: center;
 }
 
+/* =========================================================
+   SITE FOOTER (LENGKAP)
+   ========================================================= */
+
+footer.site-footer {
+  margin-top: 40px;
+  padding: 40px 20px 0;
+  background: #0b1220;
+  color: rgba(255, 255, 255, 0.75);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: left;
+  font-size: inherit;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  width: min(1160px, calc(100% - 8px));
+  margin: 0 auto;
+  padding-bottom: 32px;
+}
+
+.footer-brand-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.footer-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.footer-brand-name {
+  display: block;
+  font: 800 1.05rem Poppins, Arial;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.footer-brand-name .accent-blue {
+  color: #60a5fa;
+}
+
+.footer-brand-sub {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #60a5fa;
+}
+
+.footer-desc {
+  max-width: 460px;
+  margin-bottom: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.footer-quote {
+  padding: 10px 0 10px 14px;
+  border-left: 3px solid #2563eb;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
+.footer-quote span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: "Courier New", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+
+.footer-info h4 {
+  margin-bottom: 14px;
+  font: 800 0.78rem Poppins, Arial;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.footer-info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  list-style: none;
+}
+
+.footer-info li {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+}
+
+.footer-info li strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.footer-bottom {
+  padding: 18px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+@media (max-width: 680px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
+
 main,
 .box,
 .day-card,
@@ -782,446 +1057,7 @@ body.page-leaving {
 }
 
 /* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 900px) {
-  .piket-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .card-container {
-    justify-content: center;
-  }
-
-  .struktur-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 681px) and (max-width: 900px) {
-  .schedule-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 680px) {
-  .hero {
-    padding: 36px 15px 28px;
-  }
-
-  .hero-logo {
-    width: 74px;
-    height: 74px;
-    border-radius: 19px;
-  }
-
-  .hero-title {
-    font-size: clamp(2.2rem, 15vw, 3.4rem);
-  }
-
-  main {
-    width: calc(100% - 20px);
-    margin: 22px auto 34px;
-  }
-
-  .box {
-    border-radius: 18px;
-    padding: 19px;
-  }
-
-  .home-box {
-    min-height: 210px;
-  }
-
-  /* =========================================================
-   NAVBAR
-========================================================= */
-
-.navbar {
-    position: sticky;
-    top: 14px;
-    z-index: 50;
-
-    width: min(760px, calc(100% - 24px));
-
-    margin: 14px auto 0;
-    padding: 7px;
-
-    border: 1px solid rgba(255,255,255,0.22);
-    border-radius: 22px;
-
-    background: rgba(17, 24, 39, 0.72);
-
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
-
-    box-shadow:
-        0 14px 40px rgba(0,0,0,0.20),
-        inset 0 1px 0 rgba(255,255,255,0.16);
-
-    overflow: hidden;
-    isolation: isolate;
-}
-
-
-/* =========================================
-   BACKGROUND NAVBAR
-========================================= */
-
-.navbar::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    z-index: -2;
-
-    border-radius: inherit;
-
-    background:
-        linear-gradient(
-            120deg,
-            rgba(255,255,255,0.11),
-            rgba(255,255,255,0.025) 45%,
-            rgba(255,255,255,0.08)
-        );
-
-    pointer-events: none;
-}
-
-
-/* =========================================
-   NAVBAR LIST
-========================================= */
-
-.navbar ul {
-    position: relative;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 3px;
-
-    list-style: none;
-
-    width: 100%;
-}
-
-
-/* =========================================
-   NAVBAR LINK
-========================================= */
-
-.navbar a {
-    position: relative;
-
-    z-index: 3;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 10px 17px;
-
-    border-radius: 16px;
-
-    color: rgba(255,255,255,0.67);
-
-    font-size: 0.82rem;
-    font-weight: 800;
-
-    white-space: nowrap;
-
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-
-.navbar a:hover,
-.navbar a.active {
-    color: #fff;
-}
-
-
-.navbar a:hover {
-    transform: translateY(-1px);
-}
-
-
-/* =========================================
-   GLASS INDICATOR
-========================================= */
-
-.navbar ul::after {
-    content: "";
-
-    position: absolute;
-
-    z-index: 1;
-
-    top: var(--nav-top, 0px);
-    left: var(--nav-left, 0px);
-
-    width: var(--nav-width, 0px);
-    height: var(--nav-height, 40px);
-
-    transform: none;
-
-    border: 1px solid rgba(255,255,255,0.18);
-
-    border-radius: 15px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.22),
-            rgba(255,255,255,0.07)
-        );
-
-    box-shadow:
-        0 6px 20px rgba(0,0,0,0.18),
-        inset 0 1px 0 rgba(255,255,255,0.25);
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    pointer-events: none;
-
-    transition:
-        left 0.45s cubic-bezier(0.22,1,0.36,1),
-        top 0.45s cubic-bezier(0.22,1,0.36,1),
-        width 0.45s cubic-bezier(0.22,1,0.36,1),
-        height 0.45s cubic-bezier(0.22,1,0.36,1);
-}
-
-
-/* =========================================
-   SAAT PINDAH HALAMAN
-========================================= */
-
-.navbar.moving ul::after {
-    filter: brightness(1.12);
-}
-
-
-/* =========================================================
-   NAVBAR MOBILE
-========================================================= */
-
-@media (max-width: 680px) {
-
-    .navbar {
-        top: 8px;
-
-        width: calc(100% - 28px);
-
-        margin: 12px auto 0;
-
-        padding: 6px;
-
-        border-radius: 18px;
-    }
-
-
-    /* =====================================
-       GRID 2 x 2
-    ===================================== */
-
-    .navbar ul {
-        display: grid;
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        grid-template-rows:
-            repeat(2, auto);
-
-        gap: 4px;
-
-        width: 100%;
-    }
-
-
-    /* =====================================
-       LIST ITEM
-    ===================================== */
-
-    .navbar li {
-        width: 100%;
-
-        min-width: 0;
-    }
-
-
-    /* =====================================
-       LINK MOBILE
-    ===================================== */
-
-    .navbar a {
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        width: 100%;
-
-        min-height: 42px;
-
-        padding: 8px 4px;
-
-        border-radius: 13px;
-
-        text-align: center;
-
-        font-size: 0.72rem;
-
-        line-height: 1.2;
-
-        white-space: normal;
-
-        word-break: normal;
-
-        overflow-wrap: break-word;
-
-        box-sizing: border-box;
-    }
-
-
-    /* =====================================
-       GLASS MOBILE
-    ===================================== */
-
-    .navbar ul::after {
-        height: var(--nav-height, 42px);
-
-        border-radius: 13px;
-
-        transition:
-            left 0.35s cubic-bezier(0.22,1,0.36,1),
-            top 0.35s cubic-bezier(0.22,1,0.36,1),
-            width 0.35s cubic-bezier(0.22,1,0.36,1),
-            height 0.35s cubic-bezier(0.22,1,0.36,1);
-    }
-}
-
-
-/* =========================================================
-   HP KECIL
-========================================================= */
-
-@media (max-width: 400px) {
-
-    .navbar {
-        width: calc(100% - 20px);
-
-        padding: 5px;
-
-        border-radius: 16px;
-    }
-
-
-    .navbar ul {
-        gap: 3px;
-    }
-
-
-    .navbar a {
-        min-height: 40px;
-
-        padding: 7px 3px;
-
-        font-size: 0.67rem;
-
-        border-radius: 12px;
-    }
-
-
-    .navbar ul::after {
-        border-radius: 12px;
-    }
-}
-
-  .schedule-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .piket-grid,
-  .struktur-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .day-card {
-    width: 100%;
-    max-width: 540px;
-  }
-
-  .card-container {
-    justify-content: center;
-  }
-
-  .card,
-  .box#Member > .card-container:first-of-type .card {
-    flex: 1 1 100%;
-    width: 100%;
-    max-width: 330px;
-  }
-
-  .search-box {
-    max-width: none;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .lesson-list li {
-    grid-template-columns: 1fr;
-  }
-
-  .lesson-meta {
-    grid-column: auto;
-  }
-
-  .cta-group {
-    flex-direction: column;
-  }
-
-  .btn {
-    text-align: center;
-  }
-}
-
-/* =========================================================
-   REDUCE MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-/* =========================================================
-   BIRTHDAY — TAMBAHAN
-   Tidak mengubah styling utama website.
+   BIRTHDAY SECTION
    ========================================================= */
 
 .birthday-box {
@@ -1275,9 +1111,6 @@ body.page-leaving {
   font-size: 0.84rem;
 }
 
-/* =========================================
-   STYLE BIRTHDAY TOAST NOTIFICATION
-========================================= */
 .birthday-toast {
   position: fixed;
   bottom: 20px;
@@ -1350,7 +1183,6 @@ body.page-leaving {
   }
 }
 
-/* Countdown setiap siswa */
 .birthday-countdown {
   display: inline-flex;
   align-items: center;
@@ -1536,76 +1368,10 @@ body.birthday-popup-open {
   }
 }
 
-@keyframes toastIn {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
+/* =========================================================
+   GALLERY & QUOTES
+   ========================================================= */
 
-@keyframes toastOut {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-}
-
-@media (max-width: 680px) {
-  .birthday-box {
-    align-items: flex-start;
-    padding: 17px;
-    border-radius: 18px;
-  }
-
-  .birthday-icon {
-    flex-basis: 48px;
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    font-size: 1.5rem;
-  }
-
-  .birthday-toast {
-    right: 15px;
-    bottom: 15px;
-    width: calc(100% - 30px);
-  }
-
-  .birthday-popup {
-    padding: 14px;
-  }
-
-  .birthday-popup-card {
-    width: min(94vw, 350px);
-    padding: 24px 18px 21px;
-    border-radius: 25px;
-  }
-
-  .birthday-popup-photo-wrap {
-    width: 105px;
-    height: 105px;
-    border-radius: 29px;
-  }
-
-  .birthday-popup-photo-wrap img {
-    border-radius: 25px;
-  }
-
-  .birthday-countdown {
-    font-size: 0.64rem;
-    padding: 5px 8px;
-  }
-}
-
-/* GALERI */
 .gallery-box {
   padding-bottom: clamp(26px, 4vw, 38px);
 }
@@ -1690,6 +1456,50 @@ body.birthday-popup-open {
   line-height: 1.65;
 }
 
+/* =========================================================
+   VIDEO KENANGAN
+   ========================================================= */
+
+.video-box {
+  padding-bottom: clamp(26px, 4vw, 38px);
+}
+
+.video-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #0b1220;
+  box-shadow: 0 12px 35px rgba(23, 32, 51, 0.10);
+}
+
+.video-wrapper video {
+  display: block;
+  width: 100%;
+  max-height: 560px;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #0b1220;
+  border-radius: inherit;
+}
+
+.video-wrapper video:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 620px) {
+  .video-wrapper {
+    margin-top: 16px;
+    border-radius: 16px;
+  }
+
+  .video-wrapper video {
+    max-height: 320px;
+  }
+}
+
 .quote-box {
   position: relative;
   overflow: hidden;
@@ -1720,9 +1530,294 @@ body.birthday-popup-open {
   color: var(--muted);
 }
 
+/* =========================================
+   STYLE KELOMPOK GENERATOR (REDESIGNED)
+========================================= */
+.generator-container {
+  background: var(--surface-solid);
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.radio-group label {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.input-group input {
+  padding: 10px 15px;
+  border: 1px solid #d9e0ea;
+  border-radius: 12px;
+  font-size: 15px;
+  width: 200px;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+}
+
+.btn-acak {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 800;
+}
+
+.btn-acak:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.hasil-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0;
+}
+
+.kelompok-card {
+  background: var(--surface-solid);
+  width: 250px;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: 0 7px 24px rgba(23,32,51,0.055);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--primary);
+}
+
+.kelompok-card h3 {
+  margin-top: 0;
+  color: var(--ink);
+  text-align: center;
+  border-bottom: 1px dashed var(--line);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.kelompok-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kelompok-card ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #edf0f4;
+  display: flex;
+  align-items: center;
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+
+.kelompok-card ul li::before {
+  content: "👤";
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.kelompok-card ul li:last-child {
+  border-bottom: none;
+}
+
+/* =========================================================
+   RESPONSIVE (TABLET & MOBILE)
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .piket-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card-container {
+    justify-content: center;
+  }
+
+  .struktur-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 681px) and (max-width: 900px) {
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 850px) {
   .memory-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    padding: 36px 15px 28px;
+  }
+
+  .hero-logo {
+    width: 74px;
+    height: 74px;
+    border-radius: 19px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 15vw, 3.4rem);
+  }
+
+  main {
+    width: calc(100% - 20px);
+    margin: 22px auto 34px;
+  }
+
+  .box {
+    border-radius: 18px;
+    padding: 19px;
+  }
+
+  .home-box {
+    min-height: 210px;
+  }
+
+  /* NB: aturan navbar mode-grid lama sudah dihapus — navbar sekarang
+     selalu pakai mode hamburger/dropdown di semua ukuran layar,
+     lihat blok "NAVBAR — MODE HAMBURGER PERMANEN" di bawah. */
+
+  .schedule-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .piket-grid,
+  .struktur-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .day-card {
+    width: 100%;
+    max-width: 540px;
+  }
+
+  .card-container {
+    justify-content: center;
+  }
+
+  .card,
+  .box#Member > .card-container:first-of-type .card {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .box#Member > .card-container:first-of-type .card {
+    width: min(100%, 280px);
+    padding: 16px;
+  }
+
+  .box#Member > .card-container:first-of-type .card img {
+    width: min(100%, 220px);
+    height: 220px;
+  }
+
+  .search-box {
+    max-width: none;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lesson-list li {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-meta {
+    grid-column: auto;
+  }
+
+  .cta-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    text-align: center;
+  }
+
+  .birthday-box {
+    align-items: flex-start;
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .birthday-icon {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    font-size: 1.5rem;
+  }
+
+  .birthday-toast {
+    right: 15px;
+    bottom: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .birthday-popup {
+    padding: 14px;
+  }
+
+  .birthday-popup-card {
+    width: min(94vw, 350px);
+    padding: 24px 18px 21px;
+    border-radius: 25px;
+  }
+
+  .birthday-popup-photo-wrap {
+    width: 105px;
+    height: 105px;
+    border-radius: 29px;
+  }
+
+  .birthday-popup-photo-wrap img {
+    border-radius: 25px;
+  }
+
+  .birthday-countdown {
+    font-size: 0.64rem;
+    padding: 5px 8px;
   }
 }
 
@@ -1750,123 +1845,175 @@ body.birthday-popup-open {
   }
 }
 
+@media (max-width: 400px) {
+  .navbar {
+    width: calc(100% - 20px);
+    padding: 5px;
+    border-radius: 16px;
+  }
 
-/* =========================================
-   STYLE UNTUK HALAMAN ACAK KELOMPOK
-========================================= */
-.generator-container {
-  background: white;
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  .navbar ul {
+    gap: 3px;
+  }
+
+  .navbar a {
+    min-height: 40px;
+    padding: 7px 3px;
+    font-size: 0.67rem;
+    border-radius: 12px;
+  }
+
+  .navbar ul::after {
+    border-radius: 12px;
+  }
 }
 
-.radio-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-  text-align: left;
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* =========================================================
+   NAVBAR FIXED + HAMBURGER (PEMBARUAN)
+   ========================================================= */
+
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.20);
 }
 
-.radio-group label {
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.input-group {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-.input-group input {
-  padding: 10px 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  width: 200px;
-}
-
-.btn-acak {
-  background-color: #2563eb;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-weight: bold;
-}
-
-.btn-acak:hover {
-  background-color: #2563eb;
-}
-
-.hasil-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.kelompok-card {
-  background: white;
-  width: 250px;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-top: 5px solid #2563eb;
-}
-
-.kelompok-card h3 {
-  margin-top: 0;
-  color: #333;
-  text-align: center;
-  border-bottom: 2px dashed #ddd;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-}
-
-.kelompok-card ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.kelompok-card ul li {
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
+.navbar-inner {
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: min(1160px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 10px 0;
 }
 
-.kelompok-card ul li::before {
-  content: "👤";
-  margin-right: 10px;
-  font-size: 14px;
+.navbar-brand {
+  flex-shrink: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: #fff;
 }
 
-.kelompok-card ul li:last-child {
-  border-bottom: none;
+/* .navbar sekarang jadi anak biasa di navbar-inner, bukan sticky sendiri lagi */
+.navbar {
+  position: static;
+  top: auto;
+  width: auto;
+  margin: 0;
+  padding: 5px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
 }
 
-/* Wali Kelas — responsive photo */
-@media (max-width: 680px) {
-  .box#Member > .card-container:first-of-type .card {
-    width: min(100%, 280px);
-    padding: 16px;
-  }
-
-  .box#Member > .card-container:first-of-type .card img {
-    width: min(100%, 220px);
-    height: 220px;
-  }
+/* Tombol hamburger — SELALU tampil di semua ukuran layar */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 11px;
+  background: rgba(255,255,255,0.06);
+  cursor: pointer;
+  flex-shrink: 0;
 }
+
+.hamburger-btn span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: #fff;
+  transition: transform 0.28s ease, opacity 0.2s ease;
+}
+
+/* Animasi ikon berubah jadi silang (X) saat menu terbuka */
+.hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Dorong konten ke bawah karena navbar sekarang fixed (lepas dari alur normal) */
+body { padding-top: 60px; }
+
+/* =========================================================
+   NAVBAR — MODE HAMBURGER PERMANEN (SEMUA UKURAN LAYAR)
+   ========================================================= */
+
+.navbar {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  width: calc(100% - 24px);
+  max-width: 380px;
+  padding: 10px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.97);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, -8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+
+.navbar.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.navbar li { width: 100%; min-width: 0; }
+
+.navbar a {
+  width: 100%;
+  min-height: auto;
+  padding: 11px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  text-align: center;
+  white-space: normal;
+}
+
+.navbar ul::after { display: none; } /* indikator pill tidak dipakai di mode dropdown */
