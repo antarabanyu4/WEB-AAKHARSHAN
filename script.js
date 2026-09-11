@@ -428,3 +428,36 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.key === "Escape") closeMenu();
   });
 });
+
+/* =====================================================
+   FITUR PENGUBAH TEMA (TOMBOL FLOATING)
+====================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const themeBtn = document.getElementById('themeToggleBtn');
+  const themeIcon = document.getElementById('themeIcon');
+  const rootElement = document.documentElement;
+
+  // Fungsi memperbarui ikon pada tombol
+  function updateIcon(theme) {
+    if (themeIcon) {
+      themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+    }
+  }
+
+  if (themeBtn) {
+    // 1. Ambil dari LocalStorage, jika tidak ada default ke 'light'
+    const savedTheme = localStorage.getItem('aakarshan-theme') || 'light';
+    rootElement.setAttribute('data-theme', savedTheme);
+    updateIcon(savedTheme);
+
+    // 2. Event saat tombol diklik (Switch Tema)
+    themeBtn.addEventListener('click', () => {
+      const currentTheme = rootElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+      rootElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('aakarshan-theme', newTheme);
+      updateIcon(newTheme);
+    });
+  }
+});

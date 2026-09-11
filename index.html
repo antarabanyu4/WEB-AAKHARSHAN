@@ -20,6 +20,10 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+  <script>
+    const savedTheme = localStorage.getItem('aakarshan-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
 </head>
 
 <body>
@@ -1587,6 +1591,11 @@
       &copy; 2026 AAKARSHAN &middot; XI RPL 1 SMK Negeri 1 Purbalingga.
     </div>
   </footer>
+
+  <!-- Tombol Pengubah Tema Floating -->
+  <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Ubah Tema">
+    <span id="themeIcon">☀️</span>
+  </button>
 
 </body>
 

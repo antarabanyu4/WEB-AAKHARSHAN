@@ -9,6 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <script>
+    const savedTheme = localStorage.getItem('aakarshan-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
 </head>
 
 <body>
@@ -216,6 +221,10 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Ubah Tema">
+    <span id="themeIcon">☀️</span>
+  </button>
 
 </body>
 </html>

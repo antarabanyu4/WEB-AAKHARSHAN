@@ -2063,3 +2063,81 @@ body { padding-top: 60px; }
 }
 
 .navbar ul::after { display: none; } /* indikator pill tidak dipakai di mode dropdown */
+
+/* =========================================================
+   TEMA TERANG & GELAP (Variables & Tombol Floating)
+   ========================================================= */
+:root {
+  /* Default: Light Mode */
+  --bg-main: #f8fafc;
+  --surface-solid: #ffffff;
+  --line: #e2e8f0;
+  --ink: #0f172a;
+  --muted: #64748b;
+}
+
+[data-theme="dark"] {
+  /* Dark Mode */
+  --bg-main: #020617;
+  --surface-solid: #0f172a;
+  --line: #1e293b;
+  --ink: #f8fafc;
+  --muted: #94a3b8;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--ink);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Mengubah warna latar kartu/box tanpa mengubah hero */
+.box, .card, .piket-card, .day-card {
+  background-color: var(--surface-solid);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+/* Warna teks umum di luar hero */
+main h2, main h3, main p, .about-text {
+  color: var(--ink);
+}
+
+/* 🔒 KUNCI WARNA TEKS HERO / HEADER AGAR TIDAK DIUBAH TEMA */
+.hero, 
+.hero h1, 
+.hero h2, 
+.hero h3, 
+.hero p, 
+.hero span {
+  color: #ffffff !important; /* Memaksa warna tulisan tetap putih/terang */
+}
+
+/* --- Styling Tombol Floating di Pojok Kanan Bawah --- */
+.theme-toggle-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--surface-solid);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  z-index: 9999;
+  transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}

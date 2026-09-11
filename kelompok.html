@@ -6,6 +6,11 @@
   <title>Acak Kelompok - XI RPL 1</title>
   <link rel="icon" type="image/png" href="images/logo new.png">
   <link rel="stylesheet" href="style.css">
+
+  <script>
+    const savedTheme = localStorage.getItem('aakarshan-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
 </head>
 <body>
   <!-- Navbar -->
@@ -118,5 +123,9 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Ubah Tema">
+    <span id="themeIcon">☀️</span>
+  </button>
 </body>
 </html>
